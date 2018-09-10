@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>com.telexpress.Data.DA</name>
+    </assembly>
+    <members>
+        <member name="P:com.telexpress.Data.DA.SQLIDParam.sId">
+            <summary>
+            DA裡的SQL ID
+            </summary>
+        </member>
+        <member name="P:com.telexpress.Data.DA.SQLIDParam.paramList">
+            <summary>
+            param List
+            </summary>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.#ctor(System.String,System.Boolean)">
+            <summary>
+            是否使用預設路徑存取DA
+            </summary>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.#ctor(System.Int32)">
+            <summary>
+            Auth專用DA
+            </summary>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.#ctor(System.String,System.Boolean,System.String)">
+            <summary>
+            DataAccess 的建構子
+            </summary>
+            <param name="sqlXmlFileName">DA.xml 路徑</param>
+            <param name="defaultPath">是否使用預設路徑存取 DA</param>
+            <param name="sDynamicEncryptConnStr">動態連接字串(加密過的)</param>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunQuery(System.String)">
+            <summary>
+            以DataTable型態回傳查詢結果
+            </summary>
+            <param name="sId">SQL ID</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunQuery(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            以DataTable型態回傳查詢結果
+            </summary>
+            <param name="sId">SQL ID</param>
+            <param name="paramList">SQL PARAM</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunDataSetQuery(System.String)">
+            <summary>
+            以DataSet型態回傳查詢結果
+            </summary>
+            <param name="sId">SQL ID</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunDataSetQuery(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            以DataSet型態回傳查詢結果
+            </summary>
+            <param name="sId">SQL ID</param>
+            <param name="paramList">SQL PARAM</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunScalar(System.String)">
+            <summary>
+            查詢第一列第一行
+            </summary>
+            <param name="sId">SQL ID</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunScalar(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            查詢第一列第一行
+            </summary>
+            <param name="sId">SQL ID</param>
+            <param name="paramList">SQL PARAM</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunNonQuery(System.String)">
+            <summary>
+            執行INSERT、UPDATE、DELETE和其他沒有返回值的SQL命令
+            </summary>
+            <param name="sId">SQL ID</param>
+            <returns>執行筆數</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunNonQuery(System.String,System.Collections.Generic.List{System.Data.SqlClient.SqlParameter})">
+            <summary>
+            執行INSERT、UPDATE、DELETE和其他沒有返回值的SQL命令
+            </summary>
+            <param name="sId">SQL ID</param>
+            <param name="paramList">SQL PARAM</param>
+            <returns>執行筆數</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunQuerySQL(System.String,System.String)">
+            <summary>
+            直接傳查詢SQL，以DataTable型態回傳查詢結果
+            參數盡量用Param傳
+            </summary>
+            <param name="ConnectName">Connect Name</param>
+            <param name="CommandText">Command Text</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunQuerySQL(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            直接傳查詢SQL，以DataTable型態回傳查詢結果
+            參數盡量用Param傳
+            </summary>
+            <param name="ConnectName">Connect Name</param>
+            <param name="CommandText">Command Text</param>
+            <param name="paramArray">paramArray</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunNonQuerySQL(System.String,System.String)">
+            <summary>
+            直接使用SQL Command，執行INSERT、UPDATE、DELETE和其他沒有返回值的SQL命令
+            參數盡量用Param傳
+            </summary>
+            <param name="ConnectName">Connect Name</param>
+            <param name="CommandText">Command Text</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunNonQuerySQL(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            直接使用SQL Command，執行INSERT、UPDATE、DELETE和其他沒有返回值的SQL命令
+            參數盡量用Param傳
+            </summary>
+            <param name="ConnectName">Connect Name</param>
+            <param name="CommandText">Command Text</param>
+            <param name="paramArray">paramArray</param>
+            <returns>查詢結果</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.RunNonQueryList(System.String,System.Collections.Generic.List{com.telexpress.Data.DA.SQLIDParam})">
+            <summary>
+            執行INSERT、UPDATE、DELETE和其他沒有返回值的SQL命令
+            </summary>
+            <param name="connName">connection string name</param>
+            <param name="CommParam">SQL ID,SQL PARAM</param>
+            <returns>執行筆數</returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.ListToString(System.Data.SqlClient.SqlParameter[])">
+            <summary>
+            將param轉成文字
+            </summary>
+            <param name="paramList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.TestDBFileExist">
+            <summary>
+            TestDBFile是否存在
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DataAccess.TestDBIndex(System.Int32)">
+            <summary>
+            測試DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:com.telexpress.Data.DA.DataAccess.LastSqlCommandText">
+            <summary>
+            最後一次執行的Sql CommandText
+            </summary>
+        </member>
+        <member name="P:com.telexpress.Data.DA.DataAccess.DefaultTimeOut">
+            <summary>
+            執行 SQL 的 TimeOut 時間 (僅 for 組 SQL 給 DA 執行用，單位：秒)
+            </summary>
+        </member>
+        <member name="T:com.telexpress.Data.DA.DBAutoLoadAttribute">
+             <summary>
+             表示該成員套用DBAutoLoad的功能
+             <para>可以設定LoadFunc作為自訂的轉換函式</para>
+             </summary>
+             <remarks>
+             DBAutoLoader.AutoFillIn(DataRow)執行時此成員會被解析且自動讀取
+             </remarks>
+             <example>可以自訂轉換函式，可以定義的轉換函式有func(DataRow r) func(string s)兩種，範例如下
+             <code>
+             class MyModel
+             {
+                 [DBAutoLoad(LoadFunc="MyConvertFunction1")]
+                 public T MyProperty1 { get; set; }
+                 
+                 [DBAutoLoad(LoadFunc="MyConvertFunction2")]
+                 public T MyProperty2 { get; set; }
+                 
+                 public T MyConvertFunction(DataRow row)
+                 {
+                     return (T)(row["DBFieldName"].ToString());
+                 }
+            
+                 public T MyConvertFunction2(string data)
+                 {
+                     return (T)data;
+                 }
+             }
+             </code>
+             </example>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DBAutoLoadAttribute.ConvertToString(System.String)">
+            <summary>
+             轉換成字串
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DBAutoLoadAttribute.ConvertToInt(System.String)">
+            <summary>
+             轉換成數字int
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DBAutoLoadAttribute.ConvertToBool(System.String)">
+            <summary>
+             轉換成bool 
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DBAutoLoadAttribute.ConvertToDateTime(System.String)">
+            <summary>
+             轉換成日期 yyyy-mm-dd
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:com.telexpress.Data.DA.DBAutoLoader">
+            <summary>
+            自動化DB資料填入class instance
+            </summary>
+        </member>
+        <member name="M:com.telexpress.Data.DA.DBAutoLoader.AutoFillIn``1(System.Data.DataRow)">
+            <summary>
+            自動化DB資料填入class instance,
+            <para>使用方式 instance = DBAutoLoader.AutoFillIn&lt;目標型別&gt;(DataRow);</para>
+            </summary>
+            <typeparam name="T">目標型別</typeparam>
+            <param name="row">資料來源</param>
+            <returns></returns>
+        </member>
+        <member name="T:com.telexpress.Data.DA.Def">
+            <summary>
+            定義檔
+            </summary>
+        </member>
+    </members>
+</doc>

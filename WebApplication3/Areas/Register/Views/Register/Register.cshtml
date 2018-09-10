@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="body" class="lrp_login" onclick="Closemenu();">
+    <div class="lrp_wrap_outer">
+        <h1>會員基本資料填寫</h1>
+        <p>請正確填寫您的個人相關資料。當您兌禮或參加活動時，會依您所填寫的資料寄發相關訊息及禮品。</p>
+        <!-- 表單開始 -->
+        <form id="FormSubmitObj">
+            <!-- RD定義表單ID -->
+            <div class="lrp_fill_data">
+                <dl class="lrp_member_data">
+                    <dt>帳號<dfn>*</dfn></dt><!-- FB註冊時自動帶入帳號，隱藏remind -->
+                    <dd><input id="strEMail" name="strEMail" type="email"><span id="remindEMail" name="remindEMail" class="lrp_text_remind">請輸入有效的email帳號，以確保您能收到相關訊息通知</span></dd>
+                    <!-- remind跟alert擇一出現 -->
+                </dl>
+                @*<dl class="lrp_member_data mobile_code">
+                    <dt>手機驗證碼<dfn>*</dfn></dt>
+                    <dd>
+                        <input type="button" class="lrp_btn_com_thr" id="ActivateCodebtn" value="獲取手機驗證碼" onclick="GetMobileActivateCode();">
+                        <input type="tel"><span class="lrp_text_remind">請輸入6碼數字</span>
+                        <span class="lrp_text_alert">警示文字警示文字警示文字警示文字警示文字警示文字警示文字警示文字</span>
+                    </dd>
+                </dl>*@
+                <dl class="lrp_member_data">
+                    <!-- FB註冊時隱藏 -->
+                    <dt>密碼<dfn>*</dfn></dt>
+                    <dd><input id="strPassword" name="strPassword" type="password"><span name="remindPassword" id="remindPassword" class="lrp_text_remind">請輸入6~12位的英文加數字</span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <!-- FB註冊時隱藏 -->
+                    <dt>密碼確認<dfn>*</dfn></dt>
+                    <dd><input id="checkPassword" name="checkPassword" type="password"><span name="remindPassword" class="lrp_text_alert"></span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <dt>姓名<dfn>*</dfn></dt>
+                    <dd><input id="strName" name="strName" type="text"><span name="remindName" id="remindName" class="lrp_text_remind">請輸入您的真實中文姓名</span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <dt>手機<dfn>*</dfn></dt>
+                    <dd><input id="strMobile" name="strMobile" type="tel"><span name="remindMobile" id="remindMobile" class="lrp_text_alert"></span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <dt>生日<dfn>*</dfn></dt>
+                    <dd><input id="dtmBirth" name="dtmBirth"  type="text" readonly="readonly" ><span  name="remindBirth" class="lrp_text_alert"></span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <dt>地址<dfn>*</dfn></dt>
+                    <dd>
+                        <select id="strCity" name="strCity" onchange="fCityChange($(this));">
+                            <option>選擇縣市</option>
+                            @Html.Action("CityList", "CitySelect", new { area = "CitySelect" })
+                        </select>
+                        <select id="intZipCode" onchange="ChangePostalCode($(this));" name="intZipCode">
+                            <option>選擇區域</option>
+                            @Html.Action("AreaList", "CitySelect", new { area = "CitySelect", intCityCode = 0 })
+                        </select>
+                        <select id="postalCode" name="postalCode">
+                            <option>郵遞區號</option>
+                        </select>
+
+                        <input id="strAddress" name="strAddress" type="text" class="address">
+                        <span name="reStrAddress" class="lrp_text_alert"></span>
+                    </dd>
+                </dl>
+                <p><span class="lrp_text_alert"></span></p>
+                <p><span class="lrp_text_remind">★提醒您！填寫完整的會員資料，可立即兌換試用品及獲得會員積點！</span></p>
+            </div>
+            <div class="lrp_wcenter"><input id="btnSendOut" type="submit" class="lrp_btn_com_sub" onclick="fSendOut();"
+                    onkeypress="fSendOut();" value="確認送出"></div>
+        </form>
+        <!-- 表單結束 -->
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    //點擊手機板選單開啟&收合
+    function toggle_visibility() {
+        var className = $('#menu_nav_btn').attr('class'); //取得手機版選單目前classname
+        if (className == 'lrp_nav_btn') {
+            $("#menu_nav_btn").attr('class', 'lrp_nav_btn_close');
+            $('#mobile_nav').show();
+        }
+        else {
+            $("#menu_nav_btn").attr('class', 'lrp_nav_btn');
+            $('#mobile_nav').css('display', ''); //讓display屬性消失
+        }
+    }
+
+    //點擊畫面(body)時關閉手機板顯示的選單
+    function Closemenu() {
+        $("#menu_nav_btn").attr('class', 'lrp_nav_btn');
+        $('#mobile_nav').css('display', '');
+    }
+    function ChangePostalCode(areaCode) {
+        $('#postalCode option').val(areaCode.val());
+        $('#postalCode option').html(areaCode.val());
+        $('#postalCode').select(areaCode.val());
+    }
+    function fCityChange(varCityObj) {
+        var intCityCode = varCityObj.val();
+        $.ajax({
+            url: "@Url.Action("AreaList", "CitySelect", new { area = "CitySelect" })",
+            data: { intCityCode : intCityCode },
+            typr: "POST",
+            async: true,
+            cache: true,
+            success: function (list) {
+                $("#intZipCode option").remove();
+                $("#intZipCode").html(list);
+            }
+            
+        })
+    }
+    $(document).ready(function () {
+        //設定日期選擇器
+        $('#dtmBirth').datepicker({
+            dateFormat: 'yy-mm-dd',
+            duration: 0,
+            changeYear: true,
+            changeMonth: true,
+            showButtonPanel: true,
+            maxDate: "0",
+            yearRange: "-100:+0"
+        }); //End datepicker
+        ////新增自訂規則:手機格式
+        jQuery.validator.addMethod('isMobile', function (value, element) {
+            var Mobile = /^09[0-9]{8}$/;
+            return Mobile.test(value);
+        }, "手機號碼格式不正確");
+        //新增自訂規則:密碼
+        jQuery.validator.addMethod('isPassword', function (value, element) {
+            var Number = /[0-9]/;
+            var Letter = /[a-zA-Z]/;
+            var Symbol = /[^a-zA-Z0-9]/;
+
+            return (value.match(Number) && value.match(Letter) && !value.match(Symbol));
+        }, "密碼格式不正確，請包含數字及英文");
+
+
+        //設定驗證表單(可參考: http://www.runoob.com/jquery/jquery-plugin-validate.html )
+        $("#FormSubmitObj").validate({
+
+            //若此表單(form)未通過驗證則要進行此動作
+            invalidHandler: function (form, validator) {
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    //focus且滑動到第一個錯誤的欄位
+                    var firstInvalidElement = $(validator.errorList[0].element);
+                    $('html,body').scrollTop(firstInvalidElement.offset().top);
+                    firstInvalidElement.focus();
+                } //if (errors)
+            }, //invalidHandler
+            //不要在"按鍵放開時"檢查
+            onkeyup: false,
+            //不要在"被點擊時"檢查
+            onclick: false,
+            //警語標籤
+            errorElement: "span",
+            //警語標籤Class屬性
+            errorClass: "lrp_text_alert",
+            //未通過驗證之input的Class設定(沒有的話要給空值，不然可能會跑版)
+            highlight: "",
+            //檢查規則
+            //input的Name:{}
+            rules: {
+                strEMail: { required: true, email: true },
+                strPassword: { required: true, rangelength: [6, 12], isPassword: true },
+                checkPassword: { required: true, equalTo: "#strPassword" },
+                strName: { required: true },
+                strMobile: { required: true, isMobile: true },
+                dtmBirth: { required: true },
+                strCity: { required: true, min: 1 },
+                intZipCode: { required: true, min: 1 },
+                strCity: { required: true, min: 1 },
+                strAddress: { required: true }
+                //checkbox1: { required: true },
+                //checkbox2: { required: true }
+            },
+            //設為群組的input只會產生一個警語
+            groups: {
+                AddressArea: "strCity intZipCode strAddress",
+                CheckAgree: "checkbox1,checkbox2"
+            },
+            //警語內容
+            //input的Name:{規則名:"警語內容"}
+            messages: {
+                strEMail: {
+                    required: "帳號(E-mail)為必要欄位，不可空白",
+                    email: "E-Mail格式錯誤，請重新輸入，謝謝!"
+                },
+                strPassword: {
+                    required: "密碼為必要欄位，不可空白",
+                    rangelength: "密碼格式不正確，請輸入6-12個字元"
+                },
+                checkPassword: {
+                    required: "確認密碼為必要欄位，不可空白",
+                    equalTo: "確認密碼不正確，請重新輸入"
+                },
+                strName: { required: "姓名為必要欄位，不可空白" },
+                //strMobile: { required: "手機為必要欄位，不可空白" },
+                dtmBirth: "生日為必要欄位，不可空白",
+                strCity: "地址為必要欄位，不可空白",
+                intZipCode: "地址為必要欄位，不可空白",
+                strAddress: "地址為必要欄位，不可空白",
+                checkbox1: "請勾選",
+                checkbox2: "請勾選"
+            },
+            //顯示警語的動作
+            //error=警語標籤，element=違規的元素
+            errorPlacement: function (error, element) {
+
+                switch (element.attr('name')) {
+                    case 'strMobile':
+                        $('#remindMobile').remove();
+                        error.insertAfter(element);
+                        break;
+                    case 'strEMail':
+                        $('#remindEMail').remove();
+                        error.insertAfter(element);
+                        break;
+                    case 'strPassword':
+                        $('#remindPassword').remove();
+                        error.insertAfter(element);
+                        break;
+                    case 'strName':
+                        $('#remindName').remove();
+                        error.insertAfter(element);
+                        break;
+                    case 'dtmBirth':
+                        $('#remindBirth').remove();
+                        error.insertAfter(element);
+                        break;
+                    case 'strCity':
+                        console.log("strCity error");
+                    case 'intZipCode':
+                        console.log("intZipCode error");
+                    case 'strAddress':
+                        error.insertAfter('#reStrAddress');
+                        break;
+                    default:
+                        error.insertAfter(element);
+                        break;
+                }
+            }
+        }); //$("#ResponsedComments").validate({.....});
+        //若"生日"有值，則清掉警語(因為無法再onblur時檢查，故另外加寫)
+        $('#dtmBirth').on('change', function () {
+            if ($('#dtmBirth').val() != "") { $('#dtmBirth-error').remove(); }
+        });
+    });
+
+     //按下"確認發送"
+    function fSendOut() {
+        var data = {};
+        data.strEMail = $('#strEMail').val();
+        data.strPassword = $('#strPassword').val();
+        data.strName = $('#strName').val();
+        data.strMobile = $('#strMobile').val();
+        data.dtmBirth = $('#dtmBirth').val();
+        data.strCity = $('#strCity').val();
+        data.intZipCode = $('#intZipCode').val();
+        data.strAddress = $('#strAddress').val();
+        //"strEMail=qscwaz77499%40gmail.com&strPassword=&checkPassword=&strName=test&strMobile=0987611620&dtmBirth=2018-09-04&strCity=1&strAddress=dsfsfds"
+
+        
+        //先移除按鈕功能，避免手抖送出多筆資料
+        $('#btnSendOut').removeAttr("onclick");
+        $('#btnSendOut').removeAttr("onkeypress");
+
+        if ($("#FormSubmitObj").valid()) {
+
+            //送出註冊資料並寄出開通驗證信
+            $.ajax({
+                url: '@Url.Action("RegisterMember", "Register", new { area = "Register" })',
+                data: $("#FormSubmitObj").serialize(),
+                type: 'POST',
+                async: false,
+                cache: true,
+                success: function (resault) {
+                    if (resault) {
+                        //導入註冊完成頁面(按"上一頁"的話會跳轉到註冊選擇頁)
+                        location.replace('@Url.Action("Final", "Register", new { area = "Register" })');
+                    }
+                    else {
+                        $('#strEMail').valid();
+                        $('#strName').valid();
+                        //還原按鈕功能
+                        $('#btnSendOut').attr("onclick", "fSendOut();");
+                        $('#btnSendOut').attr("onkeypress", "fSendOut();");
+                    }
+                }
+            });   //End ajax            
+        } //if ($("#FormSubmitObj").valid()) 
+        else {
+            //還原按鈕功能
+            $('#btnSendOut').attr("onclick", "fSendOut();");
+            $('#btnSendOut').attr("onkeypress", "fSendOut();");
+        }
+    } //End fSendOut()
+
+
+
+</script>
+
+

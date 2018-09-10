@@ -1,0 +1,279 @@
+@charset "utf-8";
+/* CSS Document */
+/*body{
+	font-family: "微軟正黑體", Ariel;
+	font-size:1em;
+	line-height:1.5em;
+	color:#999;
+}
+h1{
+	font-size:2.2rem;
+	line-height:1.15em;
+	color:#fff;
+	margin-bottom:15px;
+}
+
+*/
+.clearfix {
+  overflow: auto;
+}
+#brand_wrapper{
+	width:100%;
+	max-width:1200px;
+	margin:0;
+}
+#brand_wrapper p{
+	text-align:center;
+}
+.brand_header{
+	width:100%;
+	height:auto;
+	background-color:#008fcd;
+	text-align:center;
+	padding:40px;
+	color:#FFF;
+	box-sizing:border-box;
+}
+#brand_wrapper h2{
+	font-size:2rem;
+	line-height:1.3em;
+	margin-bottom:15px;
+	text-align:center;
+}
+#brand_wrapper h3{
+	font-size:1.8rem;
+	line-height:1em;
+	color:#008fcd;
+	margin:30px 0 5px 0;
+	text-align:center;
+}
+.brand_header h1, .brand_header h2{
+	color:#fff;
+}
+
+section{
+	width:95%;
+	margin:40px auto;
+}
+article{
+	width:100%;
+	dsplay:block;
+	margin-bottom:30px;
+	overflow: auto;
+	}
+article > div{
+	width:48%;
+	text-align:left;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}
+article > div img{
+	display:block;
+	margin:auto;
+	width:100%;
+}
+.img1 img{
+	max-width:382px;
+}
+.img2 img{
+	max-width:503px;
+}
+
+.c_white{
+	color:#fff;
+}
+.c_blue{
+	color:#008fcd;
+}
+
+.video{
+	position: relative;
+    padding-bottom:27%;
+    width:48%;
+    height:0;
+}
+.video iframe{
+	position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+/*3*/
+.img3{
+	width:100%;
+}
+.img3 img{
+	max-width:803px;
+}
+.img4 img, .img5 img{
+	max-width:520px;
+}
+.divider{
+	width:100%;
+	border-top:1px solid #008fcd;
+	margin:30px 0 15px 0;
+}
+.therapy{
+	width:100%;
+}
+.therapy{
+	margin:0;
+}
+
+.therapy li{
+	width:23.8%;
+	display:inline-block;
+	margin:0 10px 10px 0;
+	padding:17px;
+	box-sizing:border-box;
+	border:1px solid #008fcd;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	height:290px;
+	vertical-align:top;
+}
+.therapy li:nth-child(4){
+	margin-right:0;
+}
+.therapy li h3{
+	font-size:1.2rem;
+	line-height:1em;
+	color:#008fcd;
+	margin:0 0 10px 0;
+	text-align:center;
+}
+
+.therapy li p{
+	text-align:left;
+	margin-bottom:0px;
+}
+.timeline{
+	width:100%;
+}
+.historybox{
+	width:100%;
+	background:url(../images/brand/brand_1_img3.gif) 15% 0% no-repeat;
+
+}
+.historybox div{
+	display:inline-block;
+	vertical-align:top;
+	box-sizing:border-box;
+}
+.year{
+	width:13%;
+	color:#008fcd;
+	text-align:right;
+	padding:0;
+}
+.story{
+	width:82%;
+	padding:0 0 10px 30px;
+}
+.feature_list{
+	width:100%;
+	display:block;
+	margin:auto;
+	text-align:center;
+}
+.feature_list ul{
+	width:43%;
+	display:inline-block;
+	margin:0 15px;
+	vertical-align:top;
+	text-align:center;
+}
+.feature_list ul li{
+	list-style:circle;
+	text-align:left;
+	margin-left:20px;
+}
+
+
+@media screen and (max-width:1100px) {
+.therapy li{
+	width:49%;
+	margin:0 10px 10px 0;
+	height:200px;
+}
+.therapy li:nth-child(2){
+	margin-right:0;
+}
+}
+
+
+
+@media screen and (max-width:860px) {
+.therapy li{
+	width:100%;
+	margin:0 0 10px 0;
+	height:auto;
+}
+
+}
+
+
+@media screen and (max-width:768px) {
+.brand_header{
+	width:100%;
+	height:auto;
+	background-color:#008fcd;
+	text-align:center;
+	padding:15px;
+	color:#FFF;
+	box-sizing:border-box;
+}
+article{
+	width:95%;
+	margin:auto;
+	display:block;
+	}
+article > div{
+	width:100%;
+}
+.left, .right{
+	float:none;
+}
+.img1 img, .img2 img{
+	max-width:none;
+	margin-bottom:20px;
+}
+
+
+article > div img{
+	display:block;
+	margin:auto;
+	width:100%;
+}
+.video{
+	position: relative;
+    padding-bottom:56.25%;
+    width:100%;
+    height:0;
+}
+.img4 img{
+	width:100%;
+	max-width:none;
+	margin-bottom:30px;
+}
+.img5 img{
+	width:100%;
+	max-width:none;
+	margin:20px 0 0 0;
+}
+.feature_list ul{
+	width:100%;
+	margin:auto;
+}
+
+}
+
+
+
+

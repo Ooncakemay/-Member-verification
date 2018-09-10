@@ -1,0 +1,188 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="body" class="lrp_login" onclick="Closemenu();">
+    <!-- 會員登入 begin -->
+    <h1 class="forseo">會員登入</h1>
+
+
+    <div class="lrp_wrap_basic lrp_banner">
+        <!-- Jeuery Slider begin -->
+        <div class="jcarousel jcarousel_banner">
+            <a class="lrp_btn_com_prev lrp_btn_com_prev_banner" title="返回" onclick=""></a>
+            <a class="lrp_btn_com_next lrp_btn_com_next_banner" title="前進" onclick=""></a>
+            <ul class="lrp_bn_kv pic_only">
+                <!-- JS控制總寬度 --><!--只有圖片的版本-->
+                <li>
+                    <a title="肌膚敏感？聽專家解密肌膚致敏因素" href="/events/2016sensi/?utm_source=lrp&utm_medium=display&utm_campaign=2016sensi&utm_content=standard_official_na_1200x430_na_na"><img alt="肌膚敏感？聽專家解密肌膚致敏因素" src="../../Images/indexBn/20160811_Sensi_1200x350.jpg"><img alt="肌膚敏感？聽專家解密肌膚致敏因素" class="m_kv" src="../../Images/indexBn/20160811_Sensi_960x400.jpg"></a>
+                </li>
+                <li>
+                    <a title="理膚寶水會員集點計劃正式上線" href="/events/2016CRM01/?utm_source=lrp&utm_medium=display&utm_campaign=2016crm&utm_content=standard_official_na_1200x430_na_na">
+                        <img alt="理膚寶水會員集點計劃正式上線" src="../../Images/indexBn/20160811_Banner_CRM_1200x350.jpg">
+
+                        <img alt="理膚寶水會員集點計劃正式上線" class="m_kv" src="../../Images/indexBn/20160811_Banner_CRM_960x400.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a title="理膚寶水會員集點計劃正式上線" href="/news"><img alt="理膚寶水會員集點計劃正式上線" src="../../Images/indexBn/20160811_Banner3_1200x350.jpg"><img alt="理膚寶水會員集點計劃正式上線" class="m_kv" src="../../Images/indexBn/20160811_Banner3_960x400.jpg"></a>
+                </li>
+            </ul>
+            <p class="jcarousel_pagination_banner" data-jcarouselpagination="true"><a href="#1" class="active">1</a><a href="#2">2</a><a href="#3">3</a></p>
+        </div>
+        <!-- Jeuery Slider end -->
+    </div>
+
+
+    <div class="lrp_wrap_outer">
+        <h1 class="forseo">會員登入</h1>
+        <div class="lrp_login_btn">
+            <div class="lrp_btn_com_sub"><span class="lrp_icon_facebook"></span>登入</div>
+        </div>
+        <hr>
+
+        <form id="FormSubmitObj">
+            <div class="lrp_login_btn">
+                <dl class="lrp_member_data">
+                    <dt>帳號</dt>
+                    <dd><input id="strEMail" name="strEMail" type="text" value=""><span id="MailFail" class="lrp_text_alert"></span></dd>
+                </dl>
+                <dl class="lrp_member_data">
+                    <dt>密碼</dt>
+                    <dd><input id="strPassword" name="strPassword" type="password" value=""><span id="PasswordFail" class="lrp_text_alert" style="display:none"></span></dd>
+                </dl>
+                <input type="button" class="lrp_btn_com_sub" onclick="Login();" onkeypress="Login();" value="登入" />
+
+            </div>
+        </form>
+        <hr>
+        <div class="lrp_login_btn">
+            <ul class="list_disc">
+                <li><a href="" title="">忘記密碼</a></li>
+                <li><a href="" title="">重寄驗證信</a></li>
+                <li><h4><a href="" title="">還不是會員立即註冊</a></h4></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 會員登入 end -->
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#strEMail").focusout(function () {
+            if ($("#strEMail").val() != '') {
+                var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+
+                if (!pattern.test($("#strEMail").val())) {
+                    $("#MailFail").text('E-Mail格式錯誤，請重新輸入，謝謝!');
+                    $("#MailFail").show();
+                }
+                else {
+                    $("#MailFail").hide();
+                }
+            }
+        });
+        $("#strPassword").focusout(function () {
+            if ($("#strPassword").val() != '') {
+                var pattern = new RegExp(/^[A-Za-z0-9]{6,12}$/);
+
+                if (!pattern.test($("#strPassword").val())) {
+                    $("#PasswordFail").text('密碼格式錯誤，請重新輸入，謝謝!');
+                    $("#PasswordFail").show();
+                }
+                else {
+                    $("#PasswordFail").hide();
+                }
+            }
+        });
+    });
+    function Login() {
+        var check=1;
+
+        if ($("#strPassword").val() == "") {
+           $("#PasswordFail").text('請輸入密碼');
+           $("#PasswordFail").show();
+           $("#strPassword").focus();
+           check=0;
+        }
+        else{
+            var pattern = new RegExp(/^[A-Za-z0-9]{6,12}$/);
+
+            if (!pattern.test($("#strPassword").val())) {
+                $("#PasswordFail").text('密碼格式錯誤，請重新輸入，謝謝!');
+                $("#PasswordFail").show();
+                    check=0;
+            }
+            else {
+                $("#PasswordFail").hide();
+            }
+        }
+         if ($("#strEMail").val() == "") {
+           $("#MailFail").text('請輸入帳號');
+           $("#MailFail").show();
+           $("#strEMail").focus();
+           check=0;
+        }
+        else{
+            var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+
+            if (!pattern.test($("#strEMail").val())) {
+                $("#MailFail").text('E-Mail格式錯誤，請重新輸入，謝謝!');
+                $("#MailFail").show();
+                    check=0;
+            }
+            else {
+                $("#MailFail").hide();
+            }
+        }
+        if(check==0){
+           return false;
+        }
+        $.ajax({
+            url: '@Url.Action("Login", "Login", new { area = "Login" })',
+            data: { Account: $("#strEMail").val(), Password: $("#strPassword").val(), },
+            type: "POST",
+            dataType: "json",
+            success: function (result) {
+                if (result.status == "WrongPassword") {
+                    $("#PasswordFail").text('密碼驗證失敗，請重新輸入');
+                    $("#PasswordFail").show();
+
+                }
+                else if (result.status == "notActive") {
+                    $("#MailFail").text('您的會員會籍已失效，若仍想繼續享有會員權益，請重新進行註冊成為新會員，謝謝您');
+                    $("#MailFail").show();
+
+                }
+                    else if (result.status == "notActivate") {
+                    $("#MailFail").text('帳號尚未開通，請先進行開通後再登入，謝謝！');
+                    $("#MailFail").show();
+
+                }
+                else if (result.status == "NoAccount") {
+                    $("#MailFail").text('您尚未成為會員,請先進行註冊後再登入，謝謝！');
+                    $("#MailFail").show();
+
+                }
+                else if (result.status == "Success") {
+                    var url = '@Request.UrlReferrer';
+                    url = url.replace("&amp;", "&");
+                    if(result.LastUrl!=""){
+                        url=result.LastUrl;
+                    }
+                    window.location = (url != "" ? url : '@Url.Action("Index", "Home", new { area = "" })');
+                }
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                $("body").append(xhr.status);
+                $("body").append(xhr.responseText);
+                OpenPop("", thrownError, "");
+            }
+        });
+
+
+    }
+
+</script>

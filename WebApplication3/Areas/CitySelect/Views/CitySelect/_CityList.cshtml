@@ -1,0 +1,12 @@
+﻿
+
+@model List<WebApplication3.Areas.Login.Models.BS_Zip>
+
+<option value="0">縣市</option>
+@if (Model != null)
+{
+    foreach (var cityItem in Model)
+    {
+        <option value="@cityItem.intCityCode">@cityItem.strCity</option>
+    } // foreach
+}

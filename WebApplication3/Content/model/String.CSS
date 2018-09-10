@@ -1,0 +1,34 @@
+.String-headline_content_txt {
+    /*font-size:12pt;*/
+    color:#333333;
+    line-height:normal;
+    word-wrap: break-word; word-break: break-all;
+}
+
+.String-headline_content_txt ul{
+    margin-left: 30px;
+}
+
+.String-gray_outside {
+    /*	width:820px;
+float: left;*/
+margin: 0px auto;
+margin-bottom:20px;
+clear: both;
+}
+
+.String-headline_photo_box {
+    /*    width:820px;
+margin-top: 10px;*/
+    margin-right: 0px;
+    margin-bottom: 20px;
+    /*margin-left: 35px;*/
+}
+
+.String-headline_content_txt p{line-height:normal;}
+
+/*a:-webkit-any-link {
+color: -webkit-link;
+text-decoration: underline;
+cursor: auto;
+}*/

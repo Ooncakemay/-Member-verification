@@ -1,0 +1,132 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+
+/**/
+p .lrp_btn_com_sub { display: inline-block; width: inherit;min-width: inherit; height: 25px; line-height: 25px; font-size: 1.6rem; margin: 0 0.5em;}
+
+/* 會員資料列表 */
+.lrp_member_data { margin-bottom: 20px;}
+.lrp_member_data::after { content: ""; display: block; clear: both; overflow: hidden;}
+.lrp_member_data dt,
+.lrp_member_data dd { display: inline-block;}
+.lrp_member_data dt { min-width: 2em; margin-right: 0.5em; white-space: nowrap; color: #333;}
+.lrp_member_data dt dfn { font-style: normal; color: #ff0000;}
+
+
+/* 會員登入 */
+.lrp_login_btn {width: 340px; max-width: 100%; margin: 0 auto; padding: 30px 0;}
+.lrp_login_btn .lrp_btn_com_sub { width: 100%;}
+.lrp_login_btn .lrp_btn_com_cart { width: 100%; margin-top: 20px;}
+.lrp_login ul.list_disc { list-style: disc; list-style-position: inside;}
+.lrp_login ul li a { text-decoration: underline;}
+.lrp_login_btn .lrp_member_data dd { width: calc(100% - 3em); float: right;}
+.lrp_login_btn .lrp_member_data dd input[type="text"],
+.lrp_login_btn .lrp_member_data dd input[type="email"],
+.lrp_login_btn .lrp_member_data dd input[type="number"],
+.lrp_login_btn .lrp_member_data dd input[type="search"],
+.lrp_login_btn .lrp_member_data dd input[type="tel"],
+.lrp_login_btn .lrp_member_data dd input[type="password"]{ width: 100%;}
+.lrp_login_btn h4{display: inline;}
+
+/* 註冊方式 */
+.reg_way { margin-bottom: 30px;}
+.reg_way:last-of-type { margin-bottom: 0;}
+
+
+/* 會員註冊 */
+.lrp_fill_data { padding: 30px 0;}
+.lrp_fill_data .lrp_member_data dt { min-width: 6em; vertical-align: top; font-weight: bold;}
+.lrp_fill_data .lrp_member_data dd p,
+.lrp_fill_data .lrp_member_data dd .lrp_text_remind,
+.lrp_fill_data .lrp_member_data dd .lrp_text_alert { margin-left: 0.5em;}
+/*.lrp_fill_data .lrp_member_data:last-of-type dd .lrp_text_alert { margin-left: 0;}*/
+.lrp_fill_data .lrp_member_data dd p { display: inline-block;}
+.lrp_fill_data .lrp_member_data dd label { margin-right: 1em;}
+.lrp_fill_data .lrp_member_data dd input[type="text"],
+.lrp_fill_data .lrp_member_data dd input[type="email"],
+.lrp_fill_data .lrp_member_data dd input[type="number"],
+.lrp_fill_data .lrp_member_data dd input[type="search"],
+.lrp_fill_data .lrp_member_data dd input[type="tel"],
+.lrp_fill_data .lrp_member_data dd input[type="password"],
+.lrp_fill_data .lrp_member_data dd select{ width: 180px; max-width: 100%;}
+.lrp_fill_data .lrp_member_data.mobile_code dd input[type="button"] { min-width: 180px; max-width: 100%;}
+.lrp_fill_data .lrp_member_data.mobile_code dd input[type="tel"] { display: block; margin: 10px 0 0 0;}
+.lrp_fill_data .lrp_member_data dd input.address { display: block; width: 100%; margin: 20px 0 0 0;}
+
+/* popup的表單*/
+.lrp_popup .lrp_fill_data { padding: 0;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd { display: block; width: 100%; float: none;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="text"],
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="email"],
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="number"],
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="search"],
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="tel"],
+.lrp_popup .lrp_fill_data .lrp_member_data dd input[type="password"] { width: 100%;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd input.address {margin: 0;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd select { width: 100%; margin-bottom: 10px;}
+.lrp_popup .lrp_fill_data .lrp_member_data.mobile_code dd input[type="button"]{ width: 100%;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd p,
+.lrp_popup .lrp_fill_data .lrp_member_data dd .lrp_text_remind,
+.lrp_popup .lrp_fill_data .lrp_member_data dd .lrp_text_alert { margin-left:0;}
+.lrp_popup .lrp_fill_data .lrp_member_data dd textarea { width: 100%; height: 100px;}
+.lrp_popup .lrp_btn_com_sub,
+.lrp_popup input[type="button"].lrp_btn_com_sub { width: 100%;}
+
+
+
+/* 聯絡我們 */
+.lrp_fill_data .lrp_member_data dd textarea { width: 800px; max-width: 100%; height: 200px;}
+#telphone { text-decoration: none; color: #999; cursor: default;}
+#telphone:hover { color: #999;}
+
+
+@media screen and (max-width: 1200px) {
+    .lrp_login .lrp_wrap_outer { padding: 0 10px; }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .lrp_fill_data .lrp_member_data dd textarea { width: calc(100vw - 200px);}
+
+}
+
+@media screen and (max-width: 768px) {
+    .lrp_fill_data .lrp_member_data dd { display: block; width: 100%; float: none;}
+    .lrp_fill_data .lrp_member_data dd input[type="text"],
+    .lrp_fill_data .lrp_member_data dd input[type="email"],
+    .lrp_fill_data .lrp_member_data dd input[type="number"],
+    .lrp_fill_data .lrp_member_data dd input[type="search"],
+    .lrp_fill_data .lrp_member_data dd input[type="tel"],
+    .lrp_fill_data .lrp_member_data dd input[type="password"] { width: 100%;}
+    .lrp_fill_data .lrp_member_data dd input.address {margin: 0;}
+    .lrp_fill_data .lrp_member_data dd select { width: 100%; margin-bottom: 10px;}
+    .lrp_fill_data .lrp_member_data dd p,
+    .lrp_fill_data .lrp_member_data dd .lrp_icon_tick,
+    .lrp_fill_data .lrp_member_data dd .lrp_text_remind,
+    .lrp_fill_data .lrp_member_data dd .lrp_text_alert { margin-left:0;}
+    .lrp_fill_data .lrp_member_data dd textarea { width: 100%; height: 100px;}
+
+    /*登入頁上方KV, 縮短高度*/
+    .lrp_banner .jcarousel { height: 200px;}
+    .lrp_banner .lrp_bn_kv.pic_only li img.m_kv { min-height: 200px;}
+
+}
+
+@media screen and (max-width: 480px) {
+    .lrp_login .lrp_member_data dd { display: block; width: 100%; float: none;}
+
+}

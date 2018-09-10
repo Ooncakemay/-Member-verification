@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+.gsc-control-cse { font: normal 16px "微軟正黑體", "微软雅黑", "Microsoft JhengHei", "Microsoft YaHei", "verdana", "Arial"; color: #999;}
+.gsc-control-cse .gsc-selected-option { white-space: nowrap;}
+.gsc-control-cse .gsc-table-result { margin-left: 8px;}
+.gsc-control-cse .gs-snippet { color: #666; font: normal 14px "微軟正黑體", "微软雅黑", "Microsoft JhengHei", "Microsoft YaHei", "verdana", "Arial";}
+.gsc-control-cse .gs-result .gs-visibleUrl {color: #008fcd;}
+.gsc-control-cse .gs-bidi-start-align.gs-snippet { color: #666; font: normal 14px "微軟正黑體", "微软雅黑", "Microsoft JhengHei", "Microsoft YaHei", "verdana", "Arial";}

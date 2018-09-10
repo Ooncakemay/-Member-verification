@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FAQModelStoreContainer" CdmEntityContainer="FAQEntities">
+    <EntitySetMapping Name="BS_Zip">
+      <EntityTypeMapping TypeName="FAQModel.BS_Zip">
+        <MappingFragment StoreEntitySet="BS_Zip">
+          <ScalarProperty Name="intCityCode" ColumnName="intCityCode" />
+          <ScalarProperty Name="strCity" ColumnName="strCity" />
+          <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+          <ScalarProperty Name="strArea" ColumnName="strArea" />
+          <ScalarProperty Name="strOtherCompanyID" ColumnName="strOtherCompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_EmailSent">
+      <EntityTypeMapping TypeName="FAQModel.Log_EmailSent">
+        <MappingFragment StoreEntitySet="Log_EmailSent">
+          <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+          <ScalarProperty Name="strEMAIL" ColumnName="strEMAIL" />
+          <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+          <ScalarProperty Name="intSendCnt" ColumnName="intSendCnt" />
+          <ScalarProperty Name="dtmSendDate" ColumnName="dtmSendDate" />
+          <ScalarProperty Name="ysnSend" ColumnName="ysnSend" />
+          <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+          <ScalarProperty Name="ysnSendDone" ColumnName="ysnSendDone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_Member">
+      <EntityTypeMapping TypeName="FAQModel.Log_Member">
+        <MappingFragment StoreEntitySet="Log_Member">
+          <ScalarProperty Name="intSeqNo" ColumnName="intSeqNo" />
+          <ScalarProperty Name="strLogType" ColumnName="strLogType" />
+          <ScalarProperty Name="strLogWHO" ColumnName="strLogWHO" />
+          <ScalarProperty Name="dtmLogDate" ColumnName="dtmLogDate" />
+          <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+          <ScalarProperty Name="strContactID" ColumnName="strContactID" />
+          <ScalarProperty Name="strEMail" ColumnName="strEMail" />
+          <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+          <ScalarProperty Name="strName" ColumnName="strName" />
+          <ScalarProperty Name="strMobile" ColumnName="strMobile" />
+          <ScalarProperty Name="strPhone" ColumnName="strPhone" />
+          <ScalarProperty Name="dtmBirth" ColumnName="dtmBirth" />
+          <ScalarProperty Name="strGender" ColumnName="strGender" />
+          <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+          <ScalarProperty Name="strCity" ColumnName="strCity" />
+          <ScalarProperty Name="strZone" ColumnName="strZone" />
+          <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+          <ScalarProperty Name="ysnPolicy" ColumnName="ysnPolicy" />
+          <ScalarProperty Name="strJoinTypeCode" ColumnName="strJoinTypeCode" />
+          <ScalarProperty Name="strJoinListCode" ColumnName="strJoinListCode" />
+          <ScalarProperty Name="strPicture" ColumnName="strPicture" />
+          <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+          <ScalarProperty Name="strActivateCode" ColumnName="strActivateCode" />
+          <ScalarProperty Name="strMemberType" ColumnName="strMemberType" />
+          <ScalarProperty Name="ysnActive" ColumnName="ysnActive" />
+          <ScalarProperty Name="dtmActivated" ColumnName="dtmActivated" />
+          <ScalarProperty Name="dtmExpired" ColumnName="dtmExpired" />
+          <ScalarProperty Name="dtmVIPDate" ColumnName="dtmVIPDate" />
+          <ScalarProperty Name="ysnDM" ColumnName="ysnDM" />
+          <ScalarProperty Name="ysnFax" ColumnName="ysnFax" />
+          <ScalarProperty Name="ysnEmail" ColumnName="ysnEmail" />
+          <ScalarProperty Name="ysnSMS" ColumnName="ysnSMS" />
+          <ScalarProperty Name="ysnTel" ColumnName="ysnTel" />
+          <ScalarProperty Name="strMemo" ColumnName="strMemo" />
+          <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+          <ScalarProperty Name="strWHO" ColumnName="strWHO" />
+          <ScalarProperty Name="dtmUpdate" ColumnName="dtmUpdate" />
+          <ScalarProperty Name="strDisplayName" ColumnName="strDisplayName" />
+          <ScalarProperty Name="strPhoneCity" ColumnName="strPhoneCity" />
+          <ScalarProperty Name="strFacebookID" ColumnName="strFacebookID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log_MemberAccessSys">
+      <EntityTypeMapping TypeName="FAQModel.Log_MemberAccessSys">
+        <MappingFragment StoreEntitySet="Log_MemberAccessSys">
+          <ScalarProperty Name="intSeqNo" ColumnName="intSeqNo" />
+          <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+          <ScalarProperty Name="strType" ColumnName="strType" />
+          <ScalarProperty Name="ysnSuccess" ColumnName="ysnSuccess" />
+          <ScalarProperty Name="dtmLogin" ColumnName="dtmLogin" />
+          <ScalarProperty Name="strIP" ColumnName="strIP" />
+          <ScalarProperty Name="strCookieID" ColumnName="strCookieID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SE_Member">
+      <EntityTypeMapping TypeName="FAQModel.SE_Member">
+        <MappingFragment StoreEntitySet="SE_Member">
+          <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+          <ScalarProperty Name="strContactID" ColumnName="strContactID" />
+          <ScalarProperty Name="strCardID1" ColumnName="strCardID1" />
+          <ScalarProperty Name="strCardID2" ColumnName="strCardID2" />
+          <ScalarProperty Name="strEMail" ColumnName="strEMail" />
+          <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+          <ScalarProperty Name="strName" ColumnName="strName" />
+          <ScalarProperty Name="strMobile" ColumnName="strMobile" />
+          <ScalarProperty Name="strPhone" ColumnName="strPhone" />
+          <ScalarProperty Name="dtmBirth" ColumnName="dtmBirth" />
+          <ScalarProperty Name="strGender" ColumnName="strGender" />
+          <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+          <ScalarProperty Name="strCity" ColumnName="strCity" />
+          <ScalarProperty Name="strZone" ColumnName="strZone" />
+          <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+          <ScalarProperty Name="ysnPolicy" ColumnName="ysnPolicy" />
+          <ScalarProperty Name="strJoinTypeCode" ColumnName="strJoinTypeCode" />
+          <ScalarProperty Name="strJoinListCode" ColumnName="strJoinListCode" />
+          <ScalarProperty Name="strPicture" ColumnName="strPicture" />
+          <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+          <ScalarProperty Name="strActivateCode" ColumnName="strActivateCode" />
+          <ScalarProperty Name="strMemberType" ColumnName="strMemberType" />
+          <ScalarProperty Name="ysnActive" ColumnName="ysnActive" />
+          <ScalarProperty Name="dtmActivated" ColumnName="dtmActivated" />
+          <ScalarProperty Name="dtmExpired" ColumnName="dtmExpired" />
+          <ScalarProperty Name="dtmVIPDate" ColumnName="dtmVIPDate" />
+          <ScalarProperty Name="ysnDM" ColumnName="ysnDM" />
+          <ScalarProperty Name="ysnFax" ColumnName="ysnFax" />
+          <ScalarProperty Name="ysnEmail" ColumnName="ysnEmail" />
+          <ScalarProperty Name="ysnSMS" ColumnName="ysnSMS" />
+          <ScalarProperty Name="ysnTel" ColumnName="ysnTel" />
+          <ScalarProperty Name="strMemo" ColumnName="strMemo" />
+          <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+          <ScalarProperty Name="strWHO" ColumnName="strWHO" />
+          <ScalarProperty Name="dtmUpdate" ColumnName="dtmUpdate" />
+          <ScalarProperty Name="strDisplayName" ColumnName="strDisplayName" />
+          <ScalarProperty Name="strPhoneCity" ColumnName="strPhoneCity" />
+          <ScalarProperty Name="strReferrerID" ColumnName="strReferrerID" />
+          <ScalarProperty Name="strFacebookID" ColumnName="strFacebookID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

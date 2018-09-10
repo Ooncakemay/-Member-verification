@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.slimScrollText .CollapsiblePanel
+{
+    margin: 0px;
+    padding: 0px;
+    margin-top:10px;
+    margin-left:25px;
+    margin-bottom:5px;
+    border-bottom: 1px solid #83B81A;
+
+}
+
+.CollapsiblePanel {
+    margin: 0px auto;
+    /* margin: 0px; */
+    padding: 0px;
+    /* margin-top: 10px; */
+    /* margin: 5px 0 10px 0; */
+    letter-spacing: 0.9px;
+    clear: both;
+    margin-bottom:20px;
+}
+
+/*Qs設定*/
+.CollapsiblePanelTab {
+    cursor: pointer;
+    font-size: 1em;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    outline:none;
+    color:#333;
+
+}
+.CollapsiblePanelTab ul {
+    margin-left: 0;
+    /*margin-left:-20px;*/
+    /*margin-right: 20px;*/
+}
+
+.CollapsiblePanelTab li
+{
+    border-color: #c5c5c5;
+    border-bottom: 1px solid #d2d2d2;
+    line-height: 1.5em; padding: 0.5em 2em 0.5em 0.5em; list-style:none; word-wrap: break-word; word-break: break-all;
+    }
+
+/*As設定*/
+.CollapsiblePanelContent {
+    margin: 0px;
+    padding: 0.5em 0.5em 0.5em 1.5em;
+    background: #f2f2f2; color: #71756f;
+    background-position: top;
+    line-height: 1.8em;word-wrap: break-word; word-break: break-all;}
+.CollapsiblePanelContent img
+{
+    display:inline;}
+.CollapsiblePanelTab a {
+    color: #5E6A71;}
+/*
+.CollapsiblePanelTab ul{ width: 97%; padding-right: 3%;}
+.CollapsiblePanelTab:hover{
+color: #83B81A;
+}*/
+
+/*Qs打開*/
+.CollapsiblePanelOpen .CollapsiblePanelTab {background: #f2f2f2;}
+
+.CollapsiblePanelOpen .CollapsiblePanelTab,
+.CollapsiblePanelClosed .CollapsiblePanelTab{ position: relative;
+    background: #f2f2f2;/*background: url(../images/btn_close.png) no-repeat right top;*/
+    border-bottom: 1px solid #fff;
+    /*color: #71756f;*/
+}
+.CollapsiblePanelOpen .CollapsiblePanelTab:after,
+.CollapsiblePanelClosed .CollapsiblePanelTab:after
+{ content: ''; display: inline-block; width: 25px; height: 25px; background: #b9bcbf url(../../Images/btn_close.png) no-repeat; background-size: 20% 20%; position: absolute; top: 9px; right: 0.5em; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; background-size: 100%;}
+
+
+/*Qs關閉*/
+
+
+.CollapsiblePanelFocused .CollapsiblePanelTab{
+    background: #f2f2f2;}
+
+.CollapsiblePanelClosed .CollapsiblePanelTab
+{ background: #f2f2f2;/*background: url(../images/btn_open.png) no-repeat right top;*/ overflow: hidden;}
+
+.CollapsiblePanelClosed .CollapsiblePanelTab:after{ content: ''; background: #b9bcbf url(../../Images/btn_open.png); background-size: 100%;}
+

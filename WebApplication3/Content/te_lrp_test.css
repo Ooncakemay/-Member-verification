@@ -1,0 +1,110 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+
+/* 前言 */
+.lrp_test_preface h1 { }
+.lrp_test_preface h4 { color: #333; margin-bottom: 0.5em;}
+.lrp_test_preface h5 { color: #999; margin-bottom: 0.5em;}
+.lrp_test_preface h6 { color: #008fcd; margin-bottom: 0.5em;}
+
+
+
+/* 肌膚檢測-問題 */
+.lrp_test_qa {margin-bottom: 60px; color: #333; font-size: 2.0rem;}
+.lrp_test_qa {list-style-type: decimal; list-style-position: inherit; padding-left: 1.5em;}
+.lrp_test_qa>li { margin-bottom: 25px;}
+.lrp_test_qa>li h5 { font-size: 2.0rem; margin-bottom: 15px;}
+.lrp_test_qa>li>.ans { overflow: hidden; margin-left: 25px;}
+.lrp_test_qa>li>.ans li{ display: block; float: left; width: 155px; padding-right: 25px; margin-bottom: 10px; cursor: pointer;}
+.lrp_test_qa>li>.ans li label { cursor: pointer;}
+.lrp_test_qa>li>.ans li img { display: block; margin-bottom: 5px; width: 50px; height: 50px; opacity: 0.5;}
+.lrp_test_qa>li>.ans li h6 { min-height: 2.5em;}
+.lrp_test_qa>li>.ans li.selected img { opacity: 1;}
+.lrp_test_qa>li>.ans li.selected h6 {color: #666;}
+.lrp_test_qa>li>.switch_check {display: block;overflow: hidden;}
+.lrp_test_qa>li>.switch_check>li>ul.ans{display: block; margin-left: 26px; margin-bottom: 16px; font-size: 16px; overflow: hidden;}
+.lrp_test_qa>li>.switch_check>li>ul.ans li {display: block;float: left;width: 16em;white-space: nowrap; color: #666;}
+.lrp_test_qa>li>.switch_check h6 {display: inline-block; margin-bottom: 8px;font-size: 1.6rem; color: #666;}
+
+.lrp_test_qa>li>.switch_check>li>ul.ans {
+  -webkit-animation: TreeMenuOpen 1s 1 ease-in-out; -webkit-transform-origin: top left;
+  -moz-animation: TreeMenuOpen 1s 1 ease-in-out; -moz-transform-origin: top left;
+  animation: TreeMenuOpen 1s 1 ease-in-out; transform-origin: top left;}
+/*動畫-上往下淡入*/
+    @-webkit-keyframes TreeMenuOpen {
+        0% { max-height:1px;}
+        100% { max-height:640px;}
+    }
+    @-moz-keyframes TreeMenuOpen {
+        0% { max-height:1px;}
+        100% { max-height:640px;}
+    }
+    @keyframes TreeMenuOpen {
+        0% { max-height:1px;}
+        100% { max-height:640px;}
+    }
+
+
+.lrp_test_qa>li label{display: block; width: 100%; cursor: pointer;}
+.lrp_test_qa>li input[type="checkbox"] {width: 20px; height: 20px; min-height: 19px; margin: 0 4px 5px 0;}
+.lrp_test_qa>li input[type="checkbox"]:checked~span{color: #008fcd;}
+.lrp_test_qa>li .btn_treemenu {display: inline-block; width: 19px;height: 19px; margin:0 5px 4px 0; vertical-align: middle; border: solid 1px #aaa;background: #fff; cursor: pointer; position: relative;}
+.lrp_test_qa>li .btn_treemenu::before {content: "";display: block; width: calc(100% - 4px); height: 1px; top: calc(50% - 1px); left: 2px; background: #aaa;position: absolute;}
+.lrp_test_qa>li .btn_treemenu.close::after{content: "";display: block;width: 1px; height: calc(100% - 4px); top: 2px;left: calc(50% - 1px);background: #aaa;position: absolute;}
+.lrp_test_qa>li .btn_treemenu:hover{border-color: #009fd6;}
+.lrp_test_qa>li .btn_treemenu:hover::before,
+.lrp_test_qa>li .btn_treemenu.close:hover::after{background: #009fd6;}
+
+/* 肌膚檢測結果頁 */
+/* 雷達 */
+.lrp_test article .lrp_chart { width: 360px; height: 280px; margin: 0 0 10px 10px; max-width: 100%; background: #008fcd; float: right;}
+.lrp_test article .lrp_chart #chartdiv { width: 100%; height: 100%; padding: 20px;}
+
+/* 肌膚檢測結果頁 */
+/* 文章 */
+.lrp_test article ul { display: inline-block; width: 50%;}
+.lrp_test article ol { display: inline-block; width: 50%;}
+.lrp_test article img { margin: 0 10px 10px 0; width: auto; max-width: 40%; height: auto; float: left;}
+
+
+@media screen and (max-width: 1200px) {
+.lrp_test .lrp_wrap_outer { padding: 0 10px;}
+}
+
+@media screen and (max-width: 768px) {
+
+    .lrp_test_preface h4 { font-size: 1.6rem;}
+    .lrp_test_qa>li>.ans { margin-left: -32px;}
+    .lrp_test_qa>li>.ans>li { width: 25%; padding: 0 4px;}
+    .lrp_test_qa>li>.ans>li img { margin: 0 auto;}
+    .lrp_test_qa>li>.ans>li h6 { text-align: center;}
+
+    .lrp_test article .lrp_chart { margin: 10px 0; width: 100%; float: none;}
+    .lrp_test article img { margin: 10px 0; width: auto; max-width: 100%; height: auto; float: none;}
+
+    .lrp_test_qa>li>.switch_check>li>ul.ans li {padding: 6px 0;}
+    .lrp_test_qa>li>.switch_check>li {padding: 6px 0;}
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .lrp_test article img { width: 100%;}
+    .lrp_test article .lrp_chart { height: 240px;}
+
+}

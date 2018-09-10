@@ -1,0 +1,52 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2017-10-11
+* Author: Kate
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+.lrp_wrap_outer { padding: 0 10px;}
+.lrp_news_list::after{ content: ""; display: block; overflow: hidden; clear: both; }
+.lrp_news_list{ padding: 16px 0; }
+.lrp_news_list dl p{ line-height: 1.25em;}
+.lrp_news_list dl{ margin-bottom: 40px; background: #fff;}
+.lrp_news_list dl dt{ padding: 0 8px; margin-bottom: 0.5em;}
+.lrp_news_list dl h4{ line-height: 1.25;}
+.lrp_news_list dl dd{ padding: 0 8px;}
+.lrp_news_list dl .btn_area{ display: none;}
+
+.lrp_news_list dl p{ height: 2.5em }
+.lrp_news_list dl .date{ font: normal 1.2rem/1.5 "arial"; height: auto; color: #333; }
+
+@media screen and (min-width: 960px) {
+.lrp_wrap_outer { padding: 0;}
+.lrp_news_list dl{ width: 32%; margin-right: 2%; float: left;}
+.lrp_news_list dl:nth-of-type(3n+2){ margin-right: 0; }
+.lrp_news_list dl dt{ height: 4.25em;}
+.lrp_news_list dl dt a:hover{ text-decoration: underline; }
+.lrp_news_list dl p{ max-height: 5em; height: 5em;
+    -webkit-line-clamp: 4;
+    -line-clamp: 4;
+    -webkit-line-clamp: 4;}
+/*.lrp_news_list dl .btn_area{ display: inherit; padding: 16px 0 0 0; height: 48px; text-align: center;}
+.lrp_news_list dl .btn_area [class*='lrp_btn_com'] { min-width: inherit; font-size: 1.4rem; line-height: 32px;}*/
+.lrp_news_list dl.news_main{ width: 100%; margin-right: 0;}
+.lrp_news_list dl.news_main>*{ width: 50%; float: left;}
+.lrp_news_list dl.news_main .pic{ width: 48%; margin-right: 2%; float: left;}
+.lrp_news_list dl.news_main dt{ margin-bottom: 1em; height: auto;}
+.lrp_news_list dl.news_main h4{ margin-bottom: 4px;}
+.lrp_news_list dl.news_main p{ line-height: 1.25em; max-height: 15em; height:auto;
+    -webkit-line-clamp: 12;
+    -line-clamp: 12;
+    -webkit-line-clamp: 12;}
+
+}

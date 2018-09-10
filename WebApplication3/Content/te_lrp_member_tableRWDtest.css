@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+
+/*我的積點 - 積點歷程*/
+.point_history .over_point { text-align: center; padding-top: 15px;}
+.point_history .over_point div { display: inline-block; padding: 5px; margin: 10px 10px 0 10px; width: 225px; height: 65px; vertical-align: middle; text-align: center; border: solid 1px #ddd;}
+.point_history .over_point div .date { font-size: 1.2rem; display: block; text-align: center;}
+
+.point_history table{ width: 100%; font-size: 1.4rem; margin-bottom: 15px;}
+.point_history table th,
+.point_history table td{ color: #666; text-align: left; padding: 10px; border-bottom: 1px solid #ddd;}
+.point_history table th{ color: #333; padding: 20px 0.5em; white-space: nowrap;}
+.point_history table td { vertical-align: middle;}
+.point_history table td.title { width: 600px;}
+.point_history table td.point{ color: #008fcd;}
+.point_history table td.no { white-space: nowrap;}
+.point_history table .point { padding-right: 20px; white-space: nowrap; text-align: right; width: 130px;}
+.point_history table .point span.alert { font-size: 1.4rem; color: #de7676;}
+.point_history table .reply {text-align: right;}
+.point_history table td a{ color: #008fcd; text-decoration: underline;}
+.point_history table td .footable-row-detail-inner div{ line-height: 1.5; margin-bottom: 0.5em;}
+.point_history table td .footable-row-detail-inner div strong{ display: inline-block; min-width: 7em;}
+.point_history table td strong { font-weight: normal; }
+
+
+
+@media screen and (max-width: 768px) {
+
+    /*我的積點 - 積點歷程*/
+    .point_history .over_point { display: none;}
+    .point_history table {margin-top: 10px;}
+    /*.point_history table thead { display: none;}*/
+    .point_history table td { height: 40px; vertical-align: middle;}
+    .point_history table td.title{ color: #008fcd;}
+    .point_history table .point { padding-right: 0.5em;}
+
+
+}
+
+
+
+@media screen and (max-width: 1024px) {
+.point_history table tbody tr:first-of-type .footable-last-column::after { content: "V"; display: inline-block; margin-left: 10px; color: #666;}
+.point_history table tbody tr:first-of-type.footable-detail-show .footable-last-column::after { content: "^"; display: inline-block; margin-left: 10px; color: #666;}
+
+}

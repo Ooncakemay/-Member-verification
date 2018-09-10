@@ -1,0 +1,98 @@
+﻿@charset "utf-8";
+/*
+* @data 2014-7-22
+* Author: Linda Lu
+*/
+
+.Download-FloatPosition .Download-text {
+margin-bottom: 15px;
+
+}
+
+/* 下載內容 */
+.Download-DownloadLinkArea { clear: both; width: 100%; margin: 0px auto 20px auto;}
+.Download-DownloadLinkArea .Download-title { color: #333; border-bottom: 1px solid #d2d2d2; font-size: 1em;
+padding: 8px 0;
+margin-bottom: 8px;
+clear: both;
+word-wrap: break-word;
+word-break: break-all;
+line-height:normal;
+}
+
+.Download-DownloadLinkArea .Download-FileSize{ margin-bottom: 0;}
+
+.Download-DownloadLinkArea .Download-text {
+float: left;
+text-align: justify;
+margin-top:5px;
+font-size:12pt;
+word-wrap: break-word;
+word-break: break-all;
+line-height: 24px;
+}
+.Download-DownloadLinkArea .Download-list {
+padding-left: 18px;
+font-size: 14 pt;
+line-height: 24px;
+margin: 5px 0 0 0;
+}
+.Download-DownloadLinkArea .Download-link {
+         -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #b8bcbf;
+    /* padding-bottom: 0.75em; */
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 230px;
+    height: 50px;
+    }
+.Download-DownloadLinkArea .Download-link:hover{ background: #78787b;}
+
+.Download-DownloadLinkArea .Download-link .Download-btn {
+    /* display: block; */
+    font-weight: bold;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+    /* width: 230px; */
+    /* height: 36px; */
+    /* padding-top: 4px; */
+    /* line-height: 50px; */
+}
+.ContentArea .Download-DownloadLinkArea .Download-link .Download-btn
+{
+    /*line-height: 30px;*/
+    }
+.Download-DownloadLinkArea .Download-link .Download-btn:hover {
+background: url(file:///C|/Users/tw4950/Desktop/cat/%E7%90%86%E8%86%9A%E5%AF%B6%E6%B0%B4/images/EditorService/button_bg.png) no-repeat;
+}
+
+.Download-DownloadLinkArea .Download-link .Download-FileSize {
+font-family: "微軟正黑體", "Trebuchet MS";
+font-size: 14pt;
+line-height: 20px;
+color: #000;
+text-align: center;
+margin-top: 5px;
+}
+.Download-list{
+    list-style:initial;
+}
+/*
+.BtnStyle4 {
+display: inline-block;
+background: #dfdfdf;
+border-radius: 1em;
+padding-right: 12px;
+line-height: 22px;
+margin-top: 3px;
+}*/
+
+.Download-FileSize{
+    padding: 0 0px 0px 240px;
+    font-size: 0.8em;
+}

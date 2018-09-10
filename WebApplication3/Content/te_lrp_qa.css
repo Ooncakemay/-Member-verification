@@ -1,0 +1,41 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+
+/* 列表 */
+.qa_list ol{/*list-style:inherit; list-style-type: decimal; list-style-position:inside;*/ margin-bottom: 50px}
+.qa_list ol li{ line-height: 1.25em; border-bottom: 1px solid #d2d2d2; border-color:rgba(0, 0, 0, 0.15); padding: 14px 8px 14px 18px;}
+.qa_list ol li:active{ background: rgba(0, 0, 0, 0.05);}
+.qa_list ol li span { float: left;}
+.qa_list ol li h4{ color: #333; width: calc(100% - 35px); overflow: hidden; word-wrap: break-word; word-break: break-all;}
+.qa_list ol li h4 span.count { min-width: 1.8em; font-size: 0.8em; line-height: 1.6em; color: #999;}
+.qa_list ol li h4 span.count::after{ content: "."; display: inline-block; margin-right: 3px;}
+.qa_list ol li .lrp_btn_arr { float: right; cursor: pointer;}
+.qa_list ol li .lrp_btn_arr::before:hover { color: #008fcd;}
+.qa_list ol li p{ display:none; padding-right: 10px;}
+.qa_list ol li.status_opne h4{ color: #008fcd; margin-bottom: 14px; height: auto;}
+.qa_list ol li.status_opne p{ display: inline-block;}
+.qa_list ol li.status_opne h4 dfn{ margin-top: 0;}
+.qa_list .lrp_btn_com_sub,
+.qa_list input[type="button"].lrp_btn_com_sub { display: block; margin:0 auto 30px auto;}
+
+
+@media screen and (max-width: 768px) {
+    .qa_list input[type="button"].lrp_btn_com_sub {width: calc(100% - 20px)}
+}
+
+
+

@@ -1,0 +1,200 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+
+/* TOP BTN */
+.lrp_top_btn { text-align: right; overflow: hidden;}
+.lrp_top_btn .lrp_btn_com_sub { min-width: 160px; font-size: 1.6rem; height: 35px; line-height: 35px;}
+
+.o_price { color: #999; font-size: 1.6rem; text-decoration: line-through; margin-right: 1em;}
+
+/* 好禮列表 */
+.lrp_gift_list { margin-bottom: 40px;}
+.lrp_gift_list::after { content: ""; display: block; clear: both; float: none; overflow: hidden;}
+.lrp_gift_list>li { text-align: center; width: 240px; height: 340px; padding: 5px; float: left; position: relative;}
+.lrp_gift_list.full_page_list{ border-bottom: 1px solid #ddd;}
+.lrp_gift_list.full_page_list>li { margin: 20px calc((100% - 960px) / 8 - 1px);}
+.lrp_gift_list>li::after { content: ""; display: block; clear: both; float: none; overflow: hidden;}
+.lrp_gift_list>li:hover { box-shadow: 0px 0px 3px rgba(0,0,0,0.15); -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.15); -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.15);}
+.lrp_gift_list li h5 a{ display: block; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; min-height: 2.5em; max-height: 2.5em;}
+.lrp_gift_list li .lrp_text_count { display: block; margin-bottom: 10px;}
+.lrp_gift_list li .lrp_text_count dfn { font-size: 0.8em;}
+.lrp_gift_list li .pic { width: 200px; height: 200px; margin: 5px auto;}
+.lrp_gift_list li .pic img { max-width: 100%; max-height: 100%;}
+.lrp_gift_list .pic .pic_tag { position: absolute; right: 0px ;top: 20px;}
+.lrp_gift_list .pic .pic_tag li { margin-bottom: 3px; padding: 0px 5px; font-size: 1.4rem; background:#008fcd; color: #fff;}
+
+/* 兌換計數 */
+.lrp_amount { display: inline-block; margin: 0 auto; overflow: hidden; white-space: nowrap;}
+.lrp_amount .btn_dc,
+.lrp_amount .btn_inc { display: block; float: left; width: 35px; height: 35px; color: #59c2f2; text-align: center; border: solid 1px #b2e2f7; background: #fff; cursor: pointer; position: relative;}
+.lrp_amount .btn_dc::before { content: ""; display: block; width: 20px; height: 4px; background: #59c2f2; position: absolute; left: 6px; top: 14px;}
+.lrp_amount .btn_inc::before { content: ""; display: block; width: 20px; height: 4px; background: #59c2f2; position: absolute; left: 6px; top: 14px;}
+.lrp_amount .btn_inc::after { content: ""; display: block; width: 4px; height: 20px; background: #59c2f2; position: absolute; left: 14px; top: 6px;}
+.lrp_amount .btn_dc:hover::before { background: #008fcd;}
+.lrp_amount .btn_inc:hover::before { background: #008fcd;}
+.lrp_amount .btn_inc:hover::after { background: #008fcd;}
+.lrp_amount .btn_dc:hover,
+.lrp_amount .btn_inc:hover{ background: #fff;}
+.lrp_amount input[type="text"].num_display { display: block; float: left; font-size: 2.2rem; width: 50px; height: 35px; text-align: center; border: 0; border-top: solid 1px #b2e2f7; border-bottom: solid 1px #b2e2f7; background: #fff;}
+.lrp_amount .btn_send { display: block; float: left; min-width: 50px; padding: 0 0.5em; height: 35px; text-align: center; line-height: 35px; background: #59c2f2; color: #fff; cursor: pointer;}
+.lrp_amount .btn_send:hover{background: #008fcd;}
+
+/* 好禮介紹 */
+.gift_infor { padding-top: 40px;}
+.gift_infor::after{ content: ""; display: block;clear: both;overflow: hidden;float: none;visibility: hidden;height: 0;}
+.gift_infor .pic { text-align: center; width: 380px; float: left;}
+.gift_infor .pic img{ width: 350px; max-width: 100%; height: auto;}
+.gift_infor .infor { display: block; width: calc(100% - 380px); float: left;}
+.gift_infor .infor h1 { margin-bottom: 10px; color: #333;}
+.gift_infor .infor h5 { margin-bottom: 10px;}
+.gift_infor .infor h2 { margin-bottom: 20px; font-size: 2.0rem;}
+.gift_infor .infor .lrp_text_count { display: block; margin-bottom: 10px; font-size: 2.4rem; color: #333;}
+.gift_infor .infor .lrp_amount { display: block; margin-bottom: 20px;}
+.gift_infor .intro { display: block; width: calc(100% - 380px); float: left;font-size: 1.4rem;}
+
+/* 好禮輪播 */
+
+.gift_slider { position: relative;}
+.gift_slider .jcarousel { width: 100%; overflow: hidden;}
+.gift_slider .lrp_gift_list { margin: 0 auto; position: relative;}
+.gift_slider .lrp_gift_list>li {float: left; margin: 10px;}
+
+/* 好禮兌換列表 */
+.gift_exchange_list { width: 100%; font-size: 1.4rem; margin-bottom: 15px;}
+.gift_exchange_list tr { border-bottom: solid 1px #ddd;}
+.gift_exchange_list td,.gift_exchange_list th { vertical-align: middle; padding: 10px 5px;}
+.gift_exchange_list th { color: #333;}
+.gift_exchange_list .pic { width: 120px; text-align: center;}
+.gift_exchange_list .pic img { width: 80px; height: 80px;}
+.gift_exchange_list .name { text-align: left; word-break:break-all;}
+.gift_exchange_list .count { text-align: center; white-space: nowrap;}
+.gift_exchange_list .amount { text-align: right; white-space: nowrap;}
+.gift_exchange_list .subtotal { text-align: right; white-space: nowrap; min-width: 60px;}
+.gift_exchange_list .delete { text-align: center; width: 100px;}
+
+.exchange_total { text-align: right; font-size: 1.4rem; padding-right: 105px; margin-bottom: 40px;}
+.exchange_total li { padding: 5px 0;}
+.exchange_total div,.exchange_total div p {display: inline-block;}
+.exchange_total div p { margin-right: 2em;}
+.exchange_total div span dfn { font-size: 1.8rem;}
+.exchange_total div.total { width: 95px;}
+
+/* 取貨方式 */
+.lrp_pickup_mode,
+.lrp_pickup_store,
+.lrp_pickup_delivery  { margin: 20px 0;}
+
+.lrp_pickup_store label,
+.lrp_pickup_delivery label { margin-right: 1em;}
+
+.lrp_pickup_store dl {margin: 0 0 25px 8px;}
+.lrp_pickup_store dl dt { margin: 10px 0; color: #008fcd; font-size: 2.0rem;}
+.lrp_pickup_store dl dd { margin: 5px 0;}
+.lrp_pickup_store dl dd a { color: #999;}
+
+.lrp_pickup_delivery li { margin: 10px 0;}
+.lrp_pickup_delivery li span { display: inline-block; min-width: 5.5em; margin-left: 5px;}
+.lrp_pickup_delivery li:nth-of-type(5) input { min-width: 284px;}
+.lrp_pickup_delivery li:nth-of-type(5) { padding-left: 97px;}
+
+.lrp_pickup_store select,
+.lrp_pickup_delivery select { min-width: 180px; width: 180px;}
+
+
+@media screen and (min-width: 768px) {
+/* 兌換計數-小 */
+.gift_exchange_list .lrp_amount { width: 82px;}
+.gift_exchange_list .lrp_amount .btn_dc,
+.gift_exchange_list .lrp_amount .btn_inc { display: block; float: left; width: 26px; height: 26px; text-align: center; border: solid 1px #e1e1e1; background: #fff; cursor: pointer; position: relative;}
+.gift_exchange_list .lrp_amount .btn_dc::before { content: ""; display: block; width: 14px; height: 2px; background: #a8a8a8; position: absolute; left: 5px; top: 11px;}
+.gift_exchange_list .lrp_amount .btn_inc::before { content: ""; display: block; width: 14px; height: 2px; background: #a8a8a8; position: absolute; left: 5px; top: 11px;}
+.gift_exchange_list .lrp_amount .btn_inc::after { content: ""; display: block; width: 2px; height: 14px; background: #a8a8a8; position: absolute; left: 11px; top: 5px;}
+.gift_exchange_list .lrp_amount .btn_dc:hover,
+.gift_exchange_list .lrp_amount .btn_inc:hover{ background: #f2f2f2;}
+.gift_exchange_list .lrp_amount input[type="text"].num_display { display: block; float: left; width: 30px; height: 26px; font-size: inherit; min-height: inherit; text-align: center; border: 0; border-top: solid 1px #e1e1e1; border-bottom: solid 1px #e1e1e1; background: #fff;}
+
+}
+
+
+@media screen and (max-width: 1200px) {
+    .lrp_gift .lrp_wrap_outer { padding: 0 10px;}
+}
+
+@media screen and (max-width: 1024px) {
+    .lrp_gift_list.full_page_list>li { margin: 20px calc((100% - 720px) / 6 - 1px);}
+
+    .gift_infor .infor { width: 60%;}
+    .gift_infor .intro { width: 60%;}
+    .gift_infor .pic { width: 40%;}
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .lrp_top_btn { margin-bottom: 15px;}
+
+    .lrp_top_btn .lrp_btn_com_sub { display: block; width: 49%; max-width: 49%; min-width: inherit;}
+    .lrp_top_btn .lrp_btn_com_sub:first-of-type { float: left;}
+    .lrp_top_btn .lrp_btn_com_sub:last-of-type { float: right;}
+
+    .lrp_list h1 {display: none;}
+    .lrp_gift_list { margin-bottom: 30px;}
+    .lrp_gift_list.full_page_list>li { margin: 20px calc((100% - 480px) / 4 - 1px);}
+
+    .gift_infor .intro { width: 100%; float: none; clear: both;}
+
+    /* 好禮兌換列表 */
+    .gift_exchange_list { border-top: solid 1px #ddd;}
+    .gift_exchange_list tr { display: block; overflow: hidden; padding: 20px 0;}
+    .gift_exchange_list tr.title { display: none;}
+    .gift_exchange_list td { display: block; padding: 0;}
+    .gift_exchange_list tr td.name { font-size: 1.8rem; margin-bottom: 10px;}
+    .gift_exchange_list .pic { float: left; width: 160px;}
+    .gift_exchange_list .pic img { width: 140px; height: auto;}
+    .gift_exchange_list .count {text-align: left; margin-bottom: 10px;}
+    .gift_exchange_list .subtotal {display: none;}
+    .gift_exchange_list .infor .amount { display: inline-block; width: 125px; height: 40px; padding-top: 3px; text-align: left;}
+    .gift_exchange_list .delete { display: inline-block; width: 40px;}
+
+    .exchange_total { padding-right: 0;}
+
+    .lrp_pickup_store select,
+    .lrp_pickup_delivery select,
+    .lrp_pickup_delivery input[type="text"],
+    .lrp_pickup_delivery input[type="tel"] { width: 100%; margin-bottom: 10px;}
+    .lrp_pickup_delivery li:nth-of-type(4) select:nth-of-type(2) {margin-bottom: 0;}
+    .lrp_pickup_delivery li:nth-of-type(5) { padding-left: 0;}
+    .lrp_pickup_delivery .lrp_text_alert { font-size: inherit;}
+}
+
+@media screen and (max-width: 600px) {
+
+    .gift_infor .infor { width: 100%; float: none; clear: both;}
+    .gift_infor .pic { width: 100%; display: block; float: none;}
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .lrp_gift_list.full_page_list>li { margin: 40px auto 60px; height: auto; float: none;}
+    .lrp_gift_list.full_page_list>li h5 a {min-height: inherit;}
+
+    .gift_infor { padding-top: 10px;}
+
+    .gift_exchange_list tr td.name { font-size: inherit; margin-bottom: inherit;}
+    .gift_exchange_list .pic { width: 100px;}
+}

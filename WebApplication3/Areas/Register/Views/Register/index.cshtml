@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="body" class="lrp_login" onclick="Closemenu();">
+    <div class="lrp_wrap_outer lrp_wrap_in_al_cen">
+        <h1>歡迎加入理膚寶水</h1>
+        <p>※請選擇註冊會員方式，註冊前請詳閱<a href="" title="">版權與服務說明</a>及<a href="" title="">隱私權政策</a></p>
+        <p>※已有帳號？請由此<span class="lrp_btn_com_sub"><a href="" title="">登入</a></span><a href="" title="">忘記密碼？</a></p>
+    </div>
+    <div class="lrp_wrap_outer lrp_wrap_in_al_cen">
+        <!-- 社群帳號註冊 begin -->
+        <div class="reg_way">
+            <h4>社群帳號註冊</h4>
+            <p>從社群帳號登入，立即開始使用</p>
+            <div class="lrp_login_btn">
+                <div class="lrp_btn_com_sub"><span class="lrp_icon_facebook"></span>登入</div>
+            </div>
+            <hr>
+        </div>
+        <!-- 社群帳號註冊 end -->
+        <!-- 理膚寶水會員註冊 begin -->
+        <div class="reg_way lrp_wrap_in_al_cen">
+            <h4>理膚寶水會員註冊</h4>
+            <div class="lrp_login_btn">
+                <a href="@Url.Action("Register","Register",new { area = "Register" })"  class="lrp_btn_com_sub">立即註冊</a>
+                <div class="lrp_btn_com_cart">手機註冊</div>
+            </div>
+        </div>
+        <!-- 理膚寶水會員註冊 end -->
+    </div>
+</div>
+

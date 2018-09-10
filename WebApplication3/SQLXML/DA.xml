@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+   <ConnectingPool>
+    <Connect Name="FAQ" ConnectingString=" Xy/C/mqJJLIvLvkruY/qv+oGtfghX2AUd9C4Nl25+i5CQoSkPfOHcJZYeCQuQLTveW6rgPeC4nM1DOPkRUxL+a0D2x6VHo5tL/3CCi0JzMDCpnHylY6wQ+6IcStWMd+tbke4jONK0YFxGlyzRXjMzBROkZoAwutTnvRCZCqeFWeM0rlj9zWXZLKy07iYw3qda7OXPloVIyuDzDkqKxDzfg==" />
+    <!--<Connect Name="OCR_DB" ConnectingString="Xy/C/mqJJLIvLvkruY/qv+oGtfghX2AUd9C4Nl25+i5CQoSkPfOHcJZYeCQuQLTveW6rgPeC4nM1DOPkRUxL+a0D2x6VHo5tL/3CCi0JzMDO4ZT0zwxLv79ITbKJSAsO+aH8LEU7EhchTab8X6yGhnXxqRMPalD0MsKrkZsqDFrcDWM8Vh6QsXAWvKtYboj88jYW79r9VYW2x//TJ2sRTw==" />-->
+    
+   </ConnectingPool>
+  <SQLCommands>
+    
+    <!-- 取得SE_User資料 By strWeixinId Author:Zeus Updater: LastUpdateDate:2016/12/1 -->
+    <SQL ID="GetSEUserByWeixinId" CommandType="Text" CommandTimeout="" PageCount="5" ConnectName="SocialChat">
+      <![CDATA[ 
+      SELECT strUserID,strUserName ,strWeixinId,ysnEnable
+      FROM SE_User
+      where strWeixinId=@strWeixinId
+    ]]>
+    </SQL>
+
+    <!-- 刪除SE_User資料 Author:Afu Updater: LastUpdateDate:2016/10/21 -->
+    <SQL ID="DeleteSEUser" CommandType="Text" CommandTimeout="" PageCount="5" ConnectName="SocialChat">
+      <![CDATA[ 
+     
+     DELETE FROM SE_User
+	   WHERE strUserID = @strUserID
+     
+      ]]>
+    </SQL>
+
+    <!-- 修改SE_User資料 Author:Afu Updater:Zeus LastUpdateDate:2017/02/24 -->
+    <SQL ID="UpdateSEUser" CommandType="Text" CommandTimeout="" PageCount="5" ConnectName="SocialChat">
+      <![CDATA[ 
+     
+     UPDATE SE_User
+     SET strSecurityGroupID = @strSecurityGroupID,strUserName = @strUserName,strPosition = @strPosition,strMobile = @strMobile
+      ,strEmail = @strEmail,strWeixinId = @strWeixinId,strGender = @strGender,strWXHeadImgUrl = @strWXHeadImgUrl,intFollowStatus = @intFollowStatus
+      ,strKF_Account = @strKF_Account,strKF_NickName = @strKF_NickName,strKF_HeadImgUrl = @strKF_HeadImgUrl,ysnKF_Status = @ysnKF_Status
+      ,ysnEnable=@ysnEnable,strTicket=@strTicket,intDefaultDeptID=@intDefaultDeptID
+	   WHERE strUserID = @strUserID
+     
+      ]]>
+    </SQL>
+    
+    
+    <!-- 修改SE_User資料 Author:Afu Updater:Zeus LastUpdateDate:2017/02/24 -->
+    <SQL ID="GetSE_Member" CommandType="Text" CommandTimeout="" PageCount="5" ConnectName="SocialChat">
+      <![CDATA[ 
+     SELECT * 
+     FROM SE_Member
+     WHERE strContactID = @strContactID
+     
+      ]]>
+    </SQL>
+
+    
+
+    
+  </SQLCommands>
+</root>

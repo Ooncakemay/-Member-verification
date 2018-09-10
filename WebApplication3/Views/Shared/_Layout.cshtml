@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>理膚寶水</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+    <!--
+        //點擊手機板選單開啟&收合
+        function toggle_visibility() {
+            var className = $('#menu_nav_btn').attr('class'); //取得手機版選單目前classname
+            if (className == 'lrp_nav_btn') {
+                $("#menu_nav_btn").attr('class', 'lrp_nav_btn_close');
+                $('#mobile_nav').show();
+            }
+            else {
+                $("#menu_nav_btn").attr('class', 'lrp_nav_btn');
+                $('#mobile_nav').css('display', ''); //讓display屬性消失
+            }
+        }
+
+        //點擊畫面(body)時關閉手機板顯示的選單
+        function Closemenu() {
+            $("#menu_nav_btn").attr('class', 'lrp_nav_btn');
+            $('#mobile_nav').css('display', '');
+        }
+
+        //-->
+    </script>
+</head>
+<body>
+    <!--Slide In Panel begin-->
+    <div class="cd-panel from-right">
+        <div class="cd-panel-header">
+            <h2>標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題標題</h2>
+            <a href="#0" class="cd-panel-close">Close</a>
+        </div>
+
+        <div class="cd-panel-container">
+            <div class="cd-panel-content">
+                <img src="Images/Resources/article_02.jpg" height="486" width="825" alt="圖片名稱">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam magnam accusamus obcaecati nisi eveniet quo veniam quibusdam veritatis autem accusantium doloribus nam mollitia maxime explicabo nemo quae aspernatur impedit cupiditate dicta molestias consectetur, sint reprehenderit maiores. Tempora, exercitationem, voluptate. Sapiente modi officiis nulla sed ullam, amet placeat, illum necessitatibus, eveniet dolorum et maiores earum tempora, quas iste perspiciatis quibusdam vero accusamus veritatis. Recusandae sunt, repellat incidunt impedit tempore iusto, nostrum eaque necessitatibus sint eos omnis! Beatae, itaque, in. Vel reiciendis consequatur saepe soluta itaque aliquam praesentium, neque tempora. Voluptatibus sit, totam rerum quo ex nemo pariatur tempora voluptatem est repudiandae iusto, architecto perferendis sequi, asperiores dolores doloremque odit. Libero, ipsum fuga repellat quae numquam cumque nobis ipsa voluptates pariatur, a rerum aspernatur aliquid maxime magnam vero dolorum omnis neque fugit laboriosam eveniet veniam explicabo, similique reprehenderit at. Iusto totam vitae blanditiis. Culpa, earum modi rerum velit voluptatum voluptatibus debitis, architecto aperiam vero tempora ratione sint ullam voluptas non! Odit sequi ipsa, voluptatem ratione illo ullam quaerat qui, vel dolorum eligendi similique inventore quisquam perferendis reprehenderit quos officia! Maxime aliquam, soluta reiciendis beatae quisquam. Alias porro facilis obcaecati et id, corporis accusamus? Ab porro fuga consequatur quisquam illo quae quas tenetur.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque similique, at excepturi adipisci repellat ut veritatis officia, saepe nemo soluta modi ducimus velit quam minus quis reiciendis culpa ullam quibusdam eveniet. Dolorum alias ducimus, ad, vitae delectus eligendi, possimus magni ipsam repudiandae iusto placeat repellat omnis veritatis adipisci aliquam hic ullam facere voluptatibus ratione laudantium perferendis quos ut. Beatae expedita, itaque assumenda libero voluptatem adipisci maiores voluptas accusantium, blanditiis saepe culpa laborum iusto maxime quae aperiam fugiat odit consequatur soluta hic. Sed quasi beatae quia repellendus, adipisci facilis ipsa vel, aperiam, consequatur eaque mollitia quaerat. Iusto fugit inventore eveniet velit.</p>
+            </div> <!-- cd-panel-content -->
+        </div> <!-- cd-panel-container -->
+    </div>
+    <!--Slide In Panel end-->
+    <!--header begin-->
+    <header>
+        <div class="lrp_logo"><a href="" title="回首頁">理膚寶水</a></div>
+        <p class="lrp_slogen">
+            <dfn>敏感肌膚美好生活</dfn>
+            皮膚科醫生指定推薦 No.1品牌
+        </p>
+
+        <div id="" class="lrp_header_member" onclick="">
+            <p>
+                @DisplayList()
+            </p>
+        </div>
+        <div id="" class="lrp_nav_btn_member" onclick="toggle_visibility();">
+            <span>5</span>
+        </div>
+        <div id="menu_nav_btn" class="lrp_nav_btn" onclick="toggle_visibility();">
+            <span class="lrp_nav_lines"></span>
+        </div>
+    </header>
+    <!-- header end -->
+    <!-- nav end -->
+    <nav id="mobile_nav">
+        <ul>
+            <li class="h_search">
+                <div>
+                    <input type="text" placeholder="輸入關鍵字">
+                    <input type="button" value="搜尋">
+                </div>
+            </li>
+            <li class="current">
+                <a href="" title="">產品總覽</a>
+                <ul>
+                    <li>
+                        <a href="" title="">產品系列</a>
+                        <ul>
+                            <li><a href="" title="">三合一高效煥白系列</a></li>
+                            <li><a href="" title="">全日保濕系列</a></li>
+                            <li><a href="" title="">全護臉部清爽防曬系列</a></li>
+                            <li><a href="" title="">安得利全護防曬系列</a></li>
+                            <li><a href="" title="">低耐受性皮膚護理系列</a></li>
+                            <li><a href="" title="">抗紅舒敏修護系列</a></li>
+                            <li><a href="" title="">表皮修復系列</a></li>
+                            <li><a href="" title="">青春痘護理系列</a></li>
+                            <li><a href="" title="">異位性皮膚炎系列</a></li>
+                            <li><a href="" title="">舒緩保濕高效清潔系列</a></li>
+                            <li><a href="" title="">溫泉舒緩修護系列</a></li>
+                            <li><a href="" title="">瑞得美青春無痕緊緻系列</a></li>
+                            <li><a href="" title="">頭皮護理系列</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" title="">產品類別</a>
+                        <ul>
+                            <li><a href="" title="">卸妝品</a></li>
+                            <li><a href="" title="">洗臉品</a></li>
+                            <li><a href="" title="">噴霧</a></li>
+                            <li><a href="" title="">化妝水</a></li>
+                            <li><a href="" title="">精華</a></li>
+                            <li><a href="" title="">眼霜</a></li>
+                            <li><a href="" title="">潤唇膏</a></li>
+                            <li><a href="" title="">乳液</a></li>
+                            <li><a href="" title="">面霜</a></li>
+                            <li><a href="" title="">修復霜</a></li>
+                            <li><a href="" title="">防曬底妝</a></li>
+                            <li><a href="" title="">身體防曬</a></li>
+                            <li><a href="" title="">臉部防曬</a></li>
+                            <li><a href="" title="">身體清潔</a></li>
+                            <li><a href="" title="">身體保濕</a></li>
+                            <li><a href="" title="">頭皮護理</a></li>
+                            <li><a href="" title="">護手霜</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" title="">肌膚問題</a>
+                        <ul>
+                            <li><a href="" title="">老化鬆弛肌膚</a></li>
+                            <li><a href="" title="">肌膚受損/傷口</a></li>
+                            <li><a href="" title="">油性臉部肌膚</a></li>
+                            <li><a href="" title="">乾燥型臉部皮膚</a></li>
+                            <li><a href="" title="">敏感型臉部皮膚</a></li>
+                            <li><a href="" title="">清潔敏感型臉部肌膚</a></li>
+                            <li><a href="" title="">異位性皮膚炎</a></li>
+                            <li><a href="" title="">膚色暗沉不均</a></li>
+                        </ul>
+                    </li>
+                    <li><div class="lrp_btn_com_sub"><a href="" title="">瀏覽全部商品</a></div></li>
+                </ul>
+            </li>
+            <li><a href="" title="">肌膚諮詢</a></li>
+
+            <li><a href="" title="">美肌新訊</a></li>
+
+            <li><a href="" title="">品牌故事</a></li>
+            <li><a href="" title=""><span class="nav_std_color01">異位性</span></a></li>
+            <li><a href="" title=""><span class="nav_std_color02">產品消息</span></a></li>
+            <li class="h_pos"><a href="" title="">線上 / 實體通路</a></li>
+        </ul>
+    </nav>
+    <!-- nav end -->
+    <!-- 麵包屑 begin -->
+    <!--     <div class="breadcrumbs">
+            <span><a href="" title="">首頁</a></span>
+        </div> -->
+    <!-- 麵包屑 end -->
+    @RenderBody()
+    <!-- 頁尾 begin -->
+    <footer>
+        <div class="footer_social">
+            <a href="" title=""><span class="lrp_icon_social lrp_icon_social_fb"></span></a>
+            <a href="" title=""><span class="lrp_icon_social lrp_icon_social_mail"></span></a>
+            <!--a href="" title=""><span class="lrp_icon_social lrp_icon_social_tel"></span></a-->
+            <a href="" title=""><span class="lrp_icon_social lrp_icon_social_youtube"></span></a>
+        </div>
+        <div class="lrp_epaper">
+            <div>
+                <input type="text" placeholder="訂閱電子報">
+                <input type="button" value="訂閱">
+            </div>
+        </div>
+        <div class="copyright">
+            <dfn><a href="" title="">聯絡我們</a></dfn>
+            <dfn><a href="" title="">版權與服務說明</a></dfn>
+            <dfn><a href="" title="">隱私權保護</a></dfn>
+            <span>hotos (c) Getty Images / (c) La Roche-Posay / (c) Centre Therma</span>
+        </div>
+    </footer>
+    <!-- 頁尾 end -->
+    <!-- PC側邊滑動 mobile置底 -->
+    <div class="lrp_float_area">
+        <a class="btn_basic btn_fb" href="" title="理膚寶水facebook粉絲團"><span>facebook</span></a>
+        <a class="btn_basic btn_qa" href="" title="Q&A"><span>Q&A</span></a>
+        <a class="btn_basic btn_docter cd-btn" href="javascript:void(0)" title="理博士">
+            <span>
+            </span>
+        </a>
+    </div>
+    <!-- PC側邊滑動 mobile置底 -->
+</body>
+</html>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        //自動轉Banner
+        $('.jcarousel_banner').jcarouselAutoscroll({
+            interval: 5000 //設定5秒換轉一張
+        });
+
+        //手機板 加入手勢滑動
+        if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+            $(".jcarousel_banner").swipe({
+                swipeLeft: function (event, direction, distance, duration, fingerCount) {
+                    //This only fires when the user swipes left
+                    $('.jcarousel_banner').jcarousel('scroll', '+=1');
+                },
+                swipeRight: function (event, direction, distance, duration, fingerCount) {
+                    //This only fires when the user swipes left
+                    $('.jcarousel_banner').jcarousel('scroll', '-=1');
+                }
+            });
+        }
+
+    });
+</script>
+@helper DisplayList()
+{
+    if (User.Identity.IsAuthenticated)
+    {
+        <span class="member_name">@ViewBag.userName</span>
+        <span><a href="" title="">會員專區</a></span>
+        <span><a href="@Url.Action("Logout", "Login", new { area = "Login" })" title="">登出</a></span>
+    }
+    else
+    {
+        <span class="member_name">Hello！請登入會員</span>
+        <span><a href="" title="">會員專區</a></span>
+        <span><a href="@Url.Action("index", "Login", new { area = "Login" })" title="">會員登入</a></span>
+        <span><a href="" title="">加入會員</a></span>
+
+    }
+
+}

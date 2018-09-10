@@ -1,0 +1,72 @@
+@charset "utf-8";
+@font-face { font-family: "eup"; src: url(../font/euphemia.ttf);}
+@font-face { font-family: "cart"; src: url(../font/cartographer.ttf);}
+/*
+* @data 2015-12-10
+* Author: Green
+--------------------------------
+深藍    008fcd
+淺藍    59c2f2
+粉紅    f594cc
+淺紅    de7676
+背景灰  f8f8f8
+淺灰線  ebedef
+
+--------------------------------
+*/
+
+/* 虛擬通路 */
+.online_shop { overflow: hidden;}
+.online_shop li {display: block;width: 220px;height: 47px;margin-right: 15px;margin-bottom: 10px;text-align: center;float: left;border: solid 1px #ddd;}
+.online_shop li:last-of-type { margin: 0;}
+.online_shop li img { width: 200px; height: 45px;}
+
+/* 實體通路 */
+.lrp_locate.lrp_btn_com_thr { margin: 0 0 30px;}
+.search_store { padding: 30px 0 50px;}
+.search_store dl { padding: 0 0 20px 0; overflow: hidden;}
+.search_store dl dt { display: inline-block; width: 30px; vertical-align: top;}
+.search_store dl dt input { margin-top: 0px;}
+.search_store dl dd { display: inline-block;}
+.search_store dl dd select { min-width: 140px;}
+.search_store dl.search_name dd input { display: block; width: 428px;}
+.search_store input[type="button"] { /*min-width: inherit; width: 80px;*/ margin-left: 35px; height: 40px; font-size: 2.0rem;}
+
+
+
+/* 實體通路搜尋結果 */
+.search_results { overflow: hidden;}
+.search_results h6 { margin-bottom: 10px;}
+.search_results .lrp_channel_list { width: calc(40% - 20px); margin:20px 20px 0 0; float: left;}
+.search_results .lrp_channel_list dl {margin-bottom: 25px;}
+.search_results .lrp_channel_list dl dt { margin: 10px 0; text-decoration: underline;}
+.search_results .lrp_channel_list dl dd { margin: 5px 0;}
+.search_results .lrp_channel_list dl dd a { color: #999;}
+.search_results .lrp_channel_list dl.current dt a{ color: #008fcd;}
+
+.search_results .google_map { width: 60%; height: 450px; float: right; margin: 20px 0; overflow: hidden;}
+
+
+@media screen and (max-width: 1200px) {
+.lrp_where .lrp_wrap_outer { padding: 0 10px;}
+}
+
+@media screen and (max-width: 768px) {
+    .online_shop li { width: 100%; margin: 0; margin-bottom: -1px ;float: none;}
+
+    .lrp_locate.lrp_btn_com_thr { width: 100%;}
+
+    .search_store dl dt { display: block; float: left;}
+    .search_store dl dd  { display: block; float: right; width: calc(100% - 35px); margin-bottom: 10px;}
+    .search_store dl dd select,
+    .search_store dl dd input { width: 100%;}
+    .search_store dl.search_name dd input[type="text"]{ width:100%;}
+    .search_store input[type="button"] { width: 100%; margin: 0;}
+
+    .search_results .lrp_channel_list {width: 100%;}
+    .search_results .google_map {display: none;}
+}
+
+@media screen and (max-width: 480px) {
+
+}

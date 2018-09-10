@@ -1,0 +1,11 @@
+﻿
+@model List<WebApplication3.Areas.Login.Models.BS_Zip>
+
+<option value="0">地區</option>
+@if (Model != null)
+{
+    foreach (var areaItem in Model)
+    {
+        <option value="@areaItem.intZipCode">@areaItem.strArea</option>
+    } // foreach
+}

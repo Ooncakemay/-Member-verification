@@ -1,0 +1,12 @@
+/*youtube RWD*/
+.embed-area{color: #333; margin-bottom:20px;}
+.embed-container { position: relative; height: 0; overflow: hidden; width: 100%; max-width: 640px; padding-bottom: 30%;}
+.embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+@media screen and (max-width: 1200px) {
+    .embed-container { padding-bottom: 40%; }
+}
+
+@media screen and (max-width: 768px) {
+    .embed-container { padding-bottom: 56.25%; }
+}

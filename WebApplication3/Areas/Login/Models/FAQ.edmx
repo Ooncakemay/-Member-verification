@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FAQModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BS_Zip">
+          <Key>
+            <PropertyRef Name="intZipCode" />
+          </Key>
+          <Property Name="intCityCode" Type="int" Nullable="false" />
+          <Property Name="strCity" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="intZipCode" Type="int" Nullable="false" />
+          <Property Name="strArea" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="strOtherCompanyID" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Log_EmailSent">
+          <Key>
+            <PropertyRef Name="dtmCreate" />
+          </Key>
+          <Property Name="strMemberID" Type="nvarchar" MaxLength="50" />
+          <Property Name="strEMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="dtmCreate" Type="datetime" Nullable="false" />
+          <Property Name="intSendCnt" Type="int" />
+          <Property Name="dtmSendDate" Type="datetime" />
+          <Property Name="ysnSend" Type="nvarchar" MaxLength="1" />
+          <Property Name="ysnActivate" Type="bit" />
+          <Property Name="ysnSendDone" Type="bit" />
+        </EntityType>
+        <EntityType Name="Log_Member">
+          <Key>
+            <PropertyRef Name="intSeqNo" />
+          </Key>
+          <Property Name="intSeqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strLogType" Type="nvarchar" MaxLength="1" />
+          <Property Name="strLogWHO" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="dtmLogDate" Type="datetime" Nullable="false" />
+          <Property Name="strMemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="strContactID" Type="nvarchar" MaxLength="15" />
+          <Property Name="strEMail" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="strPassword" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="strName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="strMobile" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="strPhone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="dtmBirth" Type="datetime" />
+          <Property Name="strGender" Type="nvarchar" MaxLength="1" />
+          <Property Name="intZipCode" Type="int" />
+          <Property Name="strCity" Type="nvarchar" MaxLength="30" />
+          <Property Name="strZone" Type="nvarchar" MaxLength="30" />
+          <Property Name="strAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="ysnPolicy" Type="bit" Nullable="false" />
+          <Property Name="strJoinTypeCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="strJoinListCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="strPicture" Type="nvarchar" MaxLength="200" />
+          <Property Name="ysnActivate" Type="bit" Nullable="false" />
+          <Property Name="strActivateCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="strMemberType" Type="nvarchar" MaxLength="10" />
+          <Property Name="ysnActive" Type="bit" Nullable="false" />
+          <Property Name="dtmActivated" Type="datetime" />
+          <Property Name="dtmExpired" Type="datetime" />
+          <Property Name="dtmVIPDate" Type="datetime" />
+          <Property Name="ysnDM" Type="bit" Nullable="false" />
+          <Property Name="ysnFax" Type="bit" Nullable="false" />
+          <Property Name="ysnEmail" Type="bit" Nullable="false" />
+          <Property Name="ysnSMS" Type="bit" Nullable="false" />
+          <Property Name="ysnTel" Type="bit" Nullable="false" />
+          <Property Name="strMemo" Type="nvarchar" MaxLength="100" />
+          <Property Name="dtmCreate" Type="datetime" Nullable="false" />
+          <Property Name="strWHO" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="dtmUpdate" Type="datetime" Nullable="false" />
+          <Property Name="strDisplayName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="strPhoneCity" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="strFacebookID" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityType Name="Log_MemberAccessSys">
+          <Key>
+            <PropertyRef Name="intSeqNo" />
+          </Key>
+          <Property Name="intSeqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="strMemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="strType" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ysnSuccess" Type="bit" Nullable="false" />
+          <Property Name="dtmLogin" Type="datetime" Nullable="false" />
+          <Property Name="strIP" Type="nvarchar" MaxLength="30" />
+          <Property Name="strCookieID" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="SE_Member">
+          <Key>
+            <PropertyRef Name="strMemberID" />
+          </Key>
+          <Property Name="strMemberID" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="strContactID" Type="nvarchar" MaxLength="15" />
+          <Property Name="strCardID1" Type="nvarchar" MaxLength="15" />
+          <Property Name="strCardID2" Type="nvarchar" MaxLength="15" />
+          <Property Name="strEMail" Type="nvarchar" MaxLength="100" />
+          <Property Name="strPassword" Type="nvarchar" MaxLength="20" />
+          <Property Name="strName" Type="nvarchar" MaxLength="20" />
+          <Property Name="strMobile" Type="nvarchar" MaxLength="10" />
+          <Property Name="strPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="dtmBirth" Type="datetime" />
+          <Property Name="strGender" Type="nvarchar" MaxLength="1" />
+          <Property Name="intZipCode" Type="int" />
+          <Property Name="strCity" Type="nvarchar" MaxLength="30" />
+          <Property Name="strZone" Type="nvarchar" MaxLength="30" />
+          <Property Name="strAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="ysnPolicy" Type="bit" Nullable="false" />
+          <Property Name="strJoinTypeCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="strJoinListCode" Type="nvarchar" MaxLength="5" />
+          <Property Name="strPicture" Type="nvarchar" MaxLength="200" />
+          <Property Name="ysnActivate" Type="bit" Nullable="false" />
+          <Property Name="strActivateCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="strMemberType" Type="nvarchar" MaxLength="10" />
+          <Property Name="ysnActive" Type="bit" Nullable="false" />
+          <Property Name="dtmActivated" Type="datetime" />
+          <Property Name="dtmExpired" Type="datetime" />
+          <Property Name="dtmVIPDate" Type="datetime" />
+          <Property Name="ysnDM" Type="bit" Nullable="false" />
+          <Property Name="ysnFax" Type="bit" Nullable="false" />
+          <Property Name="ysnEmail" Type="bit" Nullable="false" />
+          <Property Name="ysnSMS" Type="bit" Nullable="false" />
+          <Property Name="ysnTel" Type="bit" Nullable="false" />
+          <Property Name="strMemo" Type="nvarchar" MaxLength="100" />
+          <Property Name="dtmCreate" Type="datetime" Nullable="false" />
+          <Property Name="strWHO" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="dtmUpdate" Type="datetime" Nullable="false" />
+          <Property Name="strDisplayName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="strPhoneCity" Type="nvarchar" MaxLength="5" />
+          <Property Name="strReferrerID" Type="nvarchar" MaxLength="36" />
+          <Property Name="strFacebookID" Type="nvarchar" MaxLength="36" />
+        </EntityType>
+        <EntityContainer Name="FAQModelStoreContainer">
+          <EntitySet Name="BS_Zip" EntityType="Self.BS_Zip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_EmailSent" EntityType="Self.Log_EmailSent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Member" EntityType="Self.Log_Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_MemberAccessSys" EntityType="Self.Log_MemberAccessSys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SE_Member" EntityType="Self.SE_Member" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FAQModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BS_Zip">
+          <Key>
+            <PropertyRef Name="intZipCode" />
+          </Key>
+          <Property Name="intCityCode" Type="Int32" Nullable="false" />
+          <Property Name="strCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="intZipCode" Type="Int32" Nullable="false" />
+          <Property Name="strArea" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strOtherCompanyID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_EmailSent">
+          <Key>
+            <PropertyRef Name="dtmCreate" />
+          </Key>
+          <Property Name="strMemberID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strEMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dtmCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="intSendCnt" Type="Int32" />
+          <Property Name="dtmSendDate" Type="DateTime" Precision="3" />
+          <Property Name="ysnSend" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ysnActivate" Type="Boolean" />
+          <Property Name="ysnSendDone" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Log_Member">
+          <Key>
+            <PropertyRef Name="intSeqNo" />
+          </Key>
+          <Property Name="intSeqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strLogType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="strLogWHO" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dtmLogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strMemberID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strContactID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="strEMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strMobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dtmBirth" Type="DateTime" Precision="3" />
+          <Property Name="strGender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="intZipCode" Type="Int32" />
+          <Property Name="strCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="strZone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="strAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ysnPolicy" Type="Boolean" Nullable="false" />
+          <Property Name="strJoinTypeCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="strJoinListCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="strPicture" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ysnActivate" Type="Boolean" Nullable="false" />
+          <Property Name="strActivateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strMemberType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ysnActive" Type="Boolean" Nullable="false" />
+          <Property Name="dtmActivated" Type="DateTime" Precision="3" />
+          <Property Name="dtmExpired" Type="DateTime" Precision="3" />
+          <Property Name="dtmVIPDate" Type="DateTime" Precision="3" />
+          <Property Name="ysnDM" Type="Boolean" Nullable="false" />
+          <Property Name="ysnFax" Type="Boolean" Nullable="false" />
+          <Property Name="ysnEmail" Type="Boolean" Nullable="false" />
+          <Property Name="ysnSMS" Type="Boolean" Nullable="false" />
+          <Property Name="ysnTel" Type="Boolean" Nullable="false" />
+          <Property Name="strMemo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dtmCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strWHO" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dtmUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strDisplayName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strPhoneCity" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strFacebookID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Log_MemberAccessSys">
+          <Key>
+            <PropertyRef Name="intSeqNo" />
+          </Key>
+          <Property Name="intSeqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="strMemberID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ysnSuccess" Type="Boolean" Nullable="false" />
+          <Property Name="dtmLogin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strIP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="strCookieID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SE_Member">
+          <Key>
+            <PropertyRef Name="strMemberID" />
+          </Key>
+          <Property Name="strMemberID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strContactID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="strCardID1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="strCardID2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="strEMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="strPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="strName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="strMobile" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="strPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dtmBirth" Type="DateTime" Precision="3" />
+          <Property Name="strGender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="intZipCode" Type="Int32" />
+          <Property Name="strCity" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="strZone" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="strAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ysnPolicy" Type="Boolean" Nullable="false" />
+          <Property Name="strJoinTypeCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="strJoinListCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="strPicture" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ysnActivate" Type="Boolean" Nullable="false" />
+          <Property Name="strActivateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="strMemberType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ysnActive" Type="Boolean" Nullable="false" />
+          <Property Name="dtmActivated" Type="DateTime" Precision="3" />
+          <Property Name="dtmExpired" Type="DateTime" Precision="3" />
+          <Property Name="dtmVIPDate" Type="DateTime" Precision="3" />
+          <Property Name="ysnDM" Type="Boolean" Nullable="false" />
+          <Property Name="ysnFax" Type="Boolean" Nullable="false" />
+          <Property Name="ysnEmail" Type="Boolean" Nullable="false" />
+          <Property Name="ysnSMS" Type="Boolean" Nullable="false" />
+          <Property Name="ysnTel" Type="Boolean" Nullable="false" />
+          <Property Name="strMemo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dtmCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strWHO" Type="String" MaxLength="36" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dtmUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="strDisplayName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="strPhoneCity" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="strReferrerID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="strFacebookID" Type="String" MaxLength="36" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FAQEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BS_Zip" EntityType="Self.BS_Zip" />
+          <EntitySet Name="Log_EmailSent" EntityType="Self.Log_EmailSent" />
+          <EntitySet Name="Log_Member" EntityType="Self.Log_Member" />
+          <EntitySet Name="Log_MemberAccessSys" EntityType="Self.Log_MemberAccessSys" />
+          <EntitySet Name="SE_Member" EntityType="Self.SE_Member" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FAQModelStoreContainer" CdmEntityContainer="FAQEntities">
+          <EntitySetMapping Name="BS_Zip">
+            <EntityTypeMapping TypeName="FAQModel.BS_Zip">
+              <MappingFragment StoreEntitySet="BS_Zip">
+                <ScalarProperty Name="intCityCode" ColumnName="intCityCode" />
+                <ScalarProperty Name="strCity" ColumnName="strCity" />
+                <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+                <ScalarProperty Name="strArea" ColumnName="strArea" />
+                <ScalarProperty Name="strOtherCompanyID" ColumnName="strOtherCompanyID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_EmailSent">
+            <EntityTypeMapping TypeName="FAQModel.Log_EmailSent">
+              <MappingFragment StoreEntitySet="Log_EmailSent">
+                <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+                <ScalarProperty Name="strEMAIL" ColumnName="strEMAIL" />
+                <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+                <ScalarProperty Name="intSendCnt" ColumnName="intSendCnt" />
+                <ScalarProperty Name="dtmSendDate" ColumnName="dtmSendDate" />
+                <ScalarProperty Name="ysnSend" ColumnName="ysnSend" />
+                <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+                <ScalarProperty Name="ysnSendDone" ColumnName="ysnSendDone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_Member">
+            <EntityTypeMapping TypeName="FAQModel.Log_Member">
+              <MappingFragment StoreEntitySet="Log_Member">
+                <ScalarProperty Name="intSeqNo" ColumnName="intSeqNo" />
+                <ScalarProperty Name="strLogType" ColumnName="strLogType" />
+                <ScalarProperty Name="strLogWHO" ColumnName="strLogWHO" />
+                <ScalarProperty Name="dtmLogDate" ColumnName="dtmLogDate" />
+                <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+                <ScalarProperty Name="strContactID" ColumnName="strContactID" />
+                <ScalarProperty Name="strEMail" ColumnName="strEMail" />
+                <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+                <ScalarProperty Name="strName" ColumnName="strName" />
+                <ScalarProperty Name="strMobile" ColumnName="strMobile" />
+                <ScalarProperty Name="strPhone" ColumnName="strPhone" />
+                <ScalarProperty Name="dtmBirth" ColumnName="dtmBirth" />
+                <ScalarProperty Name="strGender" ColumnName="strGender" />
+                <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+                <ScalarProperty Name="strCity" ColumnName="strCity" />
+                <ScalarProperty Name="strZone" ColumnName="strZone" />
+                <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+                <ScalarProperty Name="ysnPolicy" ColumnName="ysnPolicy" />
+                <ScalarProperty Name="strJoinTypeCode" ColumnName="strJoinTypeCode" />
+                <ScalarProperty Name="strJoinListCode" ColumnName="strJoinListCode" />
+                <ScalarProperty Name="strPicture" ColumnName="strPicture" />
+                <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+                <ScalarProperty Name="strActivateCode" ColumnName="strActivateCode" />
+                <ScalarProperty Name="strMemberType" ColumnName="strMemberType" />
+                <ScalarProperty Name="ysnActive" ColumnName="ysnActive" />
+                <ScalarProperty Name="dtmActivated" ColumnName="dtmActivated" />
+                <ScalarProperty Name="dtmExpired" ColumnName="dtmExpired" />
+                <ScalarProperty Name="dtmVIPDate" ColumnName="dtmVIPDate" />
+                <ScalarProperty Name="ysnDM" ColumnName="ysnDM" />
+                <ScalarProperty Name="ysnFax" ColumnName="ysnFax" />
+                <ScalarProperty Name="ysnEmail" ColumnName="ysnEmail" />
+                <ScalarProperty Name="ysnSMS" ColumnName="ysnSMS" />
+                <ScalarProperty Name="ysnTel" ColumnName="ysnTel" />
+                <ScalarProperty Name="strMemo" ColumnName="strMemo" />
+                <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+                <ScalarProperty Name="strWHO" ColumnName="strWHO" />
+                <ScalarProperty Name="dtmUpdate" ColumnName="dtmUpdate" />
+                <ScalarProperty Name="strDisplayName" ColumnName="strDisplayName" />
+                <ScalarProperty Name="strPhoneCity" ColumnName="strPhoneCity" />
+                <ScalarProperty Name="strFacebookID" ColumnName="strFacebookID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log_MemberAccessSys">
+            <EntityTypeMapping TypeName="FAQModel.Log_MemberAccessSys">
+              <MappingFragment StoreEntitySet="Log_MemberAccessSys">
+                <ScalarProperty Name="intSeqNo" ColumnName="intSeqNo" />
+                <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+                <ScalarProperty Name="strType" ColumnName="strType" />
+                <ScalarProperty Name="ysnSuccess" ColumnName="ysnSuccess" />
+                <ScalarProperty Name="dtmLogin" ColumnName="dtmLogin" />
+                <ScalarProperty Name="strIP" ColumnName="strIP" />
+                <ScalarProperty Name="strCookieID" ColumnName="strCookieID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SE_Member">
+            <EntityTypeMapping TypeName="FAQModel.SE_Member">
+              <MappingFragment StoreEntitySet="SE_Member">
+                <ScalarProperty Name="strMemberID" ColumnName="strMemberID" />
+                <ScalarProperty Name="strContactID" ColumnName="strContactID" />
+                <ScalarProperty Name="strCardID1" ColumnName="strCardID1" />
+                <ScalarProperty Name="strCardID2" ColumnName="strCardID2" />
+                <ScalarProperty Name="strEMail" ColumnName="strEMail" />
+                <ScalarProperty Name="strPassword" ColumnName="strPassword" />
+                <ScalarProperty Name="strName" ColumnName="strName" />
+                <ScalarProperty Name="strMobile" ColumnName="strMobile" />
+                <ScalarProperty Name="strPhone" ColumnName="strPhone" />
+                <ScalarProperty Name="dtmBirth" ColumnName="dtmBirth" />
+                <ScalarProperty Name="strGender" ColumnName="strGender" />
+                <ScalarProperty Name="intZipCode" ColumnName="intZipCode" />
+                <ScalarProperty Name="strCity" ColumnName="strCity" />
+                <ScalarProperty Name="strZone" ColumnName="strZone" />
+                <ScalarProperty Name="strAddress" ColumnName="strAddress" />
+                <ScalarProperty Name="ysnPolicy" ColumnName="ysnPolicy" />
+                <ScalarProperty Name="strJoinTypeCode" ColumnName="strJoinTypeCode" />
+                <ScalarProperty Name="strJoinListCode" ColumnName="strJoinListCode" />
+                <ScalarProperty Name="strPicture" ColumnName="strPicture" />
+                <ScalarProperty Name="ysnActivate" ColumnName="ysnActivate" />
+                <ScalarProperty Name="strActivateCode" ColumnName="strActivateCode" />
+                <ScalarProperty Name="strMemberType" ColumnName="strMemberType" />
+                <ScalarProperty Name="ysnActive" ColumnName="ysnActive" />
+                <ScalarProperty Name="dtmActivated" ColumnName="dtmActivated" />
+                <ScalarProperty Name="dtmExpired" ColumnName="dtmExpired" />
+                <ScalarProperty Name="dtmVIPDate" ColumnName="dtmVIPDate" />
+                <ScalarProperty Name="ysnDM" ColumnName="ysnDM" />
+                <ScalarProperty Name="ysnFax" ColumnName="ysnFax" />
+                <ScalarProperty Name="ysnEmail" ColumnName="ysnEmail" />
+                <ScalarProperty Name="ysnSMS" ColumnName="ysnSMS" />
+                <ScalarProperty Name="ysnTel" ColumnName="ysnTel" />
+                <ScalarProperty Name="strMemo" ColumnName="strMemo" />
+                <ScalarProperty Name="dtmCreate" ColumnName="dtmCreate" />
+                <ScalarProperty Name="strWHO" ColumnName="strWHO" />
+                <ScalarProperty Name="dtmUpdate" ColumnName="dtmUpdate" />
+                <ScalarProperty Name="strDisplayName" ColumnName="strDisplayName" />
+                <ScalarProperty Name="strPhoneCity" ColumnName="strPhoneCity" />
+                <ScalarProperty Name="strReferrerID" ColumnName="strReferrerID" />
+                <ScalarProperty Name="strFacebookID" ColumnName="strFacebookID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
