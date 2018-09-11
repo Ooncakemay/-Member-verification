@@ -18,13 +18,8 @@ namespace WebApplication3.Areas.Register.Models
         public string GenerateEmailToken()
         {
             // generate an email verification token for the user
-            using (RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider())
-            {
-                byte[] data = new byte[16];
-                provider.GetBytes(data);
-                return Convert.ToBase64String(data);
-            }
-            
+            return  Guid.NewGuid().ToString("D");
+
         }
         public void SendRegisterMail(string MailBody, string toEMail) {
             SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");

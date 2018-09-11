@@ -68,7 +68,7 @@
                 <p><span class="lrp_text_alert"></span></p>
                 <p><span class="lrp_text_remind">★提醒您！填寫完整的會員資料，可立即兌換試用品及獲得會員積點！</span></p>
             </div>
-            <div class="lrp_wcenter"><input id="btnSendOut" type="submit" class="lrp_btn_com_sub" onclick="fSendOut();"
+            <div class="lrp_wcenter"><input id="btnSendOut" type="button" class="lrp_btn_com_sub" onclick="fSendOut();"
                     onkeypress="fSendOut();" value="確認送出"></div>
         </form>
         <!-- 表單結束 -->
@@ -117,6 +117,57 @@
         })
     }
     $(document).ready(function () {
+        //新增自訂規則:信箱不重複
+        jQuery.validator.addMethod('EmailUnique', function (value, element) {
+            var Unique = false;
+            $.ajax({
+                url: '@Url.Action("IsRegister", "Register", new { area = "Register" })',
+                data: $("#FormSubmitObj").serialize(),
+                type: 'POST',
+                async: false,
+                cache: true,
+                success: function (isRepeat) {
+                    if (isRepeat) {
+                        Unique = false;
+                    }
+                    else {
+                        Unique = true;
+                    }
+                }
+            });     //End ajax
+            return Unique;
+        }, "此會員帳號(E-Mail)已註冊過了，請輸入另一組帳號，謝謝!");
+        //新增自訂規則:姓名+手機不重複
+        jQuery.validator.addMethod('MemberUnique', function (value, element) {
+            var Unique = false;
+            if ($('#strName').val() == "" || $('#strMobile').val() == "") {
+                Unique = true;
+            }
+            else {
+                $.ajax({
+                    url: '@Url.Action("IsRegister", "Register", new { area = "Register" })',
+                    data: $("#FormSubmitObj").serialize(),
+                    type: 'POST',
+                    async: false,
+                    cache: true,
+                    success: function (isRepeat) {
+                        if (isRepeat) {
+                            Unique = false;
+                        }
+                        else {
+                            Unique = true;
+                        }
+                    }
+                });      //End ajax
+            }
+            return Unique;
+        }, function () {
+            $('#strMobile').val("");
+            $('#strName').val("");
+            $('#strName').focus();
+            return "此會員已註冊過了，請輸入另一組會員資料，謝謝!";
+        });
+
         //設定日期選擇器
         $('#dtmBirth').datepicker({
             dateFormat: 'yy-mm-dd',
@@ -168,11 +219,11 @@
             //檢查規則
             //input的Name:{}
             rules: {
-                strEMail: { required: true, email: true },
+                strEMail: { required: true, email: true, EmailUnique: true },
                 strPassword: { required: true, rangelength: [6, 12], isPassword: true },
                 checkPassword: { required: true, equalTo: "#strPassword" },
-                strName: { required: true },
-                strMobile: { required: true, isMobile: true },
+                strName: { required: true, MemberUnique: true },
+                strMobile: { required: true, isMobile: true, MemberUnique: true },
                 dtmBirth: { required: true },
                 strCity: { required: true, min: 1 },
                 intZipCode: { required: true, min: 1 },
@@ -255,35 +306,23 @@
     });
 
      //按下"確認發送"
-    function fSendOut() {
-        var data = {};
-        data.strEMail = $('#strEMail').val();
-        data.strPassword = $('#strPassword').val();
-        data.strName = $('#strName').val();
-        data.strMobile = $('#strMobile').val();
-        data.dtmBirth = $('#dtmBirth').val();
-        data.strCity = $('#strCity').val();
-        data.intZipCode = $('#intZipCode').val();
-        data.strAddress = $('#strAddress').val();
-        //"strEMail=qscwaz77499%40gmail.com&strPassword=&checkPassword=&strName=test&strMobile=0987611620&dtmBirth=2018-09-04&strCity=1&strAddress=dsfsfds"
-
-        
+    function fSendOut() {   
         //先移除按鈕功能，避免手抖送出多筆資料
         $('#btnSendOut').removeAttr("onclick");
         $('#btnSendOut').removeAttr("onkeypress");
 
         if ($("#FormSubmitObj").valid()) {
-
+            debugger;
             //送出註冊資料並寄出開通驗證信
             $.ajax({
                 url: '@Url.Action("RegisterMember", "Register", new { area = "Register" })',
                 data: $("#FormSubmitObj").serialize(),
                 type: 'POST',
-                async: false,
-                cache: true,
+                async: true,
                 success: function (resault) {
+                    debugger;
                     if (resault) {
-                        //導入註冊完成頁面(按"上一頁"的話會跳轉到註冊選擇頁)
+                        alert("註冊成功");
                         location.replace('@Url.Action("Final", "Register", new { area = "Register" })');
                     }
                     else {

@@ -53,7 +53,7 @@
     <!--Slide In Panel end-->
     <!--header begin-->
     <header>
-        <div class="lrp_logo"><a href="" title="回首頁">理膚寶水</a></div>
+        <div class="lrp_logo"><a href="@Url.Action("index", "Home", new { area = "" })" title="回首頁">理膚寶水</a></div>
         <p class="lrp_slogen">
             <dfn>敏感肌膚美好生活</dfn>
             皮膚科醫生指定推薦 No.1品牌
@@ -235,7 +235,7 @@
         <span class="member_name">Hello！請登入會員</span>
         <span><a href="" title="">會員專區</a></span>
         <span><a href="@Url.Action("index", "Login", new { area = "Login" })" title="">會員登入</a></span>
-        <span><a href="" title="">加入會員</a></span>
+        <span><a href="@Url.Action("index", "Register", new { area = "Register" })" title="">加入會員</a></span>
 
     }
 

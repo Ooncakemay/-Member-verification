@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "EmailValidate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="body" class="lrp_login" onclick="Closemenu();">
+    @if (ViewBag.Validate == "success")
+    {
+        <div class="lrp_wrap_outer">
+            <h1>感謝您的註冊</h1>
+            <p>恭喜您完成會員e-mail認證</p>
+        </div>
+    }
+    else
+    {
+        <div class="lrp_wrap_outer">
+            <h1>認證失敗</h1>
+            <p>e-mail或驗證碼不符</p>
+        </div>
+
+    }
+
+</div>
+

@@ -37,7 +37,7 @@ namespace WebApplication3.Areas.Login.Models
         }
         public bool CheckMailExisted(String strMemberID) {
             bool isExist = false;
-            var selectMemberID = db.Log_EmailSent.FirstOrDefault(u => u.strMemberID == strMemberID);
+            var selectMemberID = db.Log_EmailSent.FirstOrDefault(u => u.strMemberID.Equals(strMemberID));
 
             if (selectMemberID != null)
             {
@@ -62,11 +62,10 @@ namespace WebApplication3.Areas.Login.Models
         }
         public void UpdateLogEmailSend(string strMemberID, int AddCount, int ChangeActivated)
         {
-            var logEmail = db.Log_EmailSent.FirstOrDefault(u => u.strMemberID == strMemberID);
+            var logEmail = db.Log_EmailSent.FirstOrDefault(u => u.strMemberID.Equals(strMemberID) );
 
             if (AddCount != 0) {
                 logEmail.intSendCnt += AddCount;
-                logEmail.dtmCreate = DateTime.Now;
             }
             if (ChangeActivated != 0)
             {

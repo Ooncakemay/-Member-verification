@@ -28,7 +28,7 @@ namespace WebApplication3.Areas.Login.Models
 
             if (loginMember != null)
             {
-           
+
                 if (!PasswordCheck(loginMember, password))
                 {
                     status = "WrongPassword";
@@ -60,7 +60,7 @@ namespace WebApplication3.Areas.Login.Models
 
 
         }
-        protected bool PasswordCheck(SE_Member checkMember,string Password) {
+        protected bool PasswordCheck(SE_Member checkMember, string Password) {
             bool result = checkMember.strPassword.Equals(Password);
             return result;
         }
@@ -83,30 +83,67 @@ namespace WebApplication3.Areas.Login.Models
             if (se != null) {
                 strMembverID = se.strMemberID;
             }
-            return strMembverID; 
+            return strMembverID;
         }
-   
+
+        public bool CheckStrActivateCode(string strMemberID, string strActivateCode)
+        {
+            bool IsValdate = false;
+            SE_Member tamp = db.SE_Member.FirstOrDefault(u => u.strMemberID.Equals(strMemberID));
+            tamp = db.SE_Member.FirstOrDefault(u => u.strActivateCode.Equals(strActivateCode));
+
+            SE_Member se = db.SE_Member.FirstOrDefault(u => u.strMemberID.Equals(strMemberID) && u.strActivateCode.Equals(strActivateCode));
+            //防呆
+            if (se != null)
+            {
+                IsValdate = true;
+            }
+            return IsValdate;
+        }
+        public bool AccountCheckstrMemberID(string strMemberID)
+        {
+            bool isExist = false;
+            SE_Member se = db.SE_Member.FirstOrDefault(u => u.strMemberID == strMemberID);
+            //防呆
+            if (se != null)
+            {
+                isExist = true;
+            }
+            return isExist;
+        }
+
         public bool AccountCheck(RegisterViewModel register) {
             bool isExist = false;
             var selectEmail = db.SE_Member.FirstOrDefault(u => u.strEMail == register.strEMail);
-            
-            if (selectEmail != null) {
+            var selectPhone = db.SE_Member.FirstOrDefault(u => u.strName == register.strName && u.strMobile == register.strMobile);
+            if ((selectEmail != null )|| (selectPhone != null)) {
                 isExist = true;
             }
             return isExist;
             
         }
-        public bool RegisterNewMember(RegisterViewModel register) {
-            SE_Member newMember = new SE_Member();
-   
-            bool isInsert = false;
-
-            using (RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider())
+        public bool UpdateActive(string strMemberID) {
+            SE_Member se = db.SE_Member.FirstOrDefault(u => u.strMemberID == strMemberID);
+            bool IsUpdate = false;
+            se.ysnActivate = true;
+            se.ysnActive = true;
+            try
             {
-                byte[] data = new byte[8];
-                provider.GetBytes(data);
-                newMember.strMemberID = Convert.ToBase64String(data);
+                db.SaveChanges();
+                IsUpdate = true;
             }
+            catch (DbEntityValidationException ex)
+            {
+                throw ex;
+            }
+            return IsUpdate;
+        }
+        public string RegisterNewMember(RegisterViewModel register,string strActivateCode) {
+            SE_Member newMember = new SE_Member();
+
+            string isInsert = "";
+      
+            newMember.strMemberID = Guid.NewGuid().ToString("D");//***亂數產生器
             newMember.strEMail = register.strEMail;
             newMember.strName = register.strName;
             newMember.strPhone = "";
@@ -121,6 +158,7 @@ namespace WebApplication3.Areas.Login.Models
             newMember.ysnSMS = false;
             newMember.ysnTel = false;
             newMember.dtmUpdate = DateTime.Now;
+            newMember.strActivateCode = strActivateCode;
 
 
 
@@ -131,7 +169,7 @@ namespace WebApplication3.Areas.Login.Models
             {
                 db.SE_Member.Add(newMember);
                 db.SaveChanges();
-                isInsert = true;
+                isInsert = newMember.strMemberID;
             }
             catch (DbEntityValidationException ex)
             { 

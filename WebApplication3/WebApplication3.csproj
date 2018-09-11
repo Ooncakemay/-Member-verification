@@ -254,6 +254,16 @@
     <Compile Include="Areas\Register\Models\MailService.cs" />
     <Compile Include="Areas\Register\Models\RegisterViewModel.cs" />
     <Compile Include="Areas\Register\RegisterAreaRegistration.cs" />
+    <Compile Include="Connected Services\SendNow\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -278,6 +288,23 @@
       <LastGenOutput>FAQ.cs</LastGenOutput>
     </Content>
     <Content Include="Areas\Register\Views\Register\RegisterEmailTemplate.html" />
+    <Content Include="Areas\Register\Views\Register\EmailValidate.cshtml" />
+    <None Include="Connected Services\SendNow\SendNow.wsdl" />
+    <Content Include="Connected Services\SendNow\WebApplication3.SendNow.SendToOneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\SendNow\configuration91.svcinfo" />
+    <None Include="Connected Services\SendNow\configuration.svcinfo" />
+    <None Include="Connected Services\SendNow\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -555,6 +582,16 @@
     <Content Include="Areas\Login\Models\FAQ.edmx.diagram">
       <DependentUpon>FAQ.edmx</DependentUpon>
     </Content>
+    <None Include="Connected Services\ServiceReference\SendBatch.wsdl" />
+    <Content Include="Connected Services\ServiceReference\WebApplication3.ServiceReference.SendRemoteUrlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\WebApplication3.ServiceReference.SendTemplateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference\WebApplication3.ServiceReference.SendTemplateWithBlockResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -642,6 +679,13 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\SendNow\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
